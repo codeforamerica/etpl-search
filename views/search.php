@@ -31,8 +31,7 @@
 					</div>
 					<div class="checkbox-wrapper">
 						<input type="checkbox" name="features_wheelchair_accessible"><div class="checkbox"></div><label for="features_wheelchair_accessible">Wheelchair Accessible</label>
-				</div>
-
+					</div>
 					<div class="checkbox-wrapper">
 						<input type="checkbox" name="features_career_counseling_available"><div class="checkbox"></div><label for="features_career_counseling_available">Career Counseling Available</label>
 					</div>
