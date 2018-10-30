@@ -45,7 +45,8 @@
 				<?php include("results.php"); ?>
 			</div>
 		</div>
-
+		
+		<?php include("shared/analytics.php"); ?>
 	</body>
 </html>
 

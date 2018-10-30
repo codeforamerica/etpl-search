@@ -43,5 +43,7 @@
 				<input type="submit" value="Search" class="fake">
 			</form>
 		</div>
+
+		<?php include("shared/analytics.php"); ?>
 	</body>
 </html>
