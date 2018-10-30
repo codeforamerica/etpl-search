@@ -26,6 +26,8 @@
 	} else {
 		echo '<div class="no-results">Sorry, no matches...</div>';
 	}
+
+	mysqli_close($db);
 ?>
 <!DOCTYPE HTML>
 <html>
