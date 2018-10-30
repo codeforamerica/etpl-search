@@ -61,5 +61,5 @@ $(document).ready(function() {
 	});
 }).on("click", ".program", function () {
 	// $("body").scrollTop($(this).offset().top - $(".header-wrapper").height() - 20);
-	$(this).children(".debug").slideToggle();
+	// $(this).children(".debug").slideToggle();
 });

@@ -5,6 +5,7 @@
 	-webkit-font-smoothing: antialiased;
 	-webkit-appearance: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: -apple-system, system-ui;
 }
 
 ::selection {
@@ -71,7 +72,7 @@ html, body {
 			}
 		
 			h1 {
-			    font-family: -apple-system, system-ui;
+			    
 			    font-size: 34px;
 			    color: #000000;
 			    line-height: 40px;
@@ -82,7 +83,7 @@ html, body {
 			}
 			
 			h3 {
-			    font-family: -apple-system, system-ui;
+			    
 			    font-weight: normal;
 			    font-size: 14px;
 			    color: rgba(0, 0, 0, 0.25);
@@ -98,7 +99,7 @@ html, body {
 			    width: calc(~"100% - 60px");
 				height: 22px;
 			    outline: none;
-			    font-family: -apple-system, system-ui;
+			    
 			    font-size: 20px;
 			    margin-left: 20px;
 				margin-top: 10px;
@@ -136,7 +137,7 @@ html, body {
 			    width: 38px;
 			    background-color: #2A87EC;
 			    outline: none;
-			    font-family: -apple-system, system-ui;
+			    
 			    font-size: 15px;
 			    margin-top: 15px;
 			    margin-left: -48px;
@@ -166,7 +167,7 @@ html, body {
 				.checkbox-wrapper {
 					background: #F5F5F5;
 				    outline: none;
-				    font-family: -apple-system, system-ui;
+				    
 				    font-size: 17px;
 				    margin-right: 5px;
 					margin-bottom: 10px;
@@ -199,12 +200,13 @@ html, body {
 					    background-size: 100%;
 					    vertical-align: -4px;
 					    margin-right: 4px;
+						margin-left: -4px;
 						background-image: url("../images/checkbox-empty.png");
 						opacity: 0.4;
 					}
 				
 					label {
-						margin-left: 5px;
+						margin-left: 4px;
 					}
 				
 				
@@ -260,7 +262,7 @@ html, body {
 					    border: 1px solid #E6E6E6;
 					    width: calc(~"100% - 94px");
 					    outline: none;
-					    font-family: -apple-system, system-ui;
+					    
 					    font-size: 16px;
 					    padding: 7px 10px;
 					    border-radius: 50px;
@@ -310,7 +312,7 @@ html, body {
 								.checkbox-wrapper {
 									background: #F5F5F5;
 								    outline: none;
-								    font-family: -apple-system, system-ui;
+								    
 								    font-size: 14px;
 								    margin-right: 5px;
 								    padding: 6px 12px 6px 7px;
@@ -340,7 +342,7 @@ html, body {
 									}
 				
 									label {
-										margin-left: 5px;
+										margin-left: 4px;
 									}
 				
 				
@@ -374,116 +376,77 @@ html, body {
 				width: 100%;
 				z-index: 1;
 				
-				.program {
-				    background: #FFFFFF;
-				    border: 1px solid #E6E6E6;
-				    width: calc(~"100% - 82px");
-				    padding: 20px;
-				    margin: 20px;
-				    border-radius: 5px;
-					cursor: pointer;
+				a.program-link-wrapper {
+					text-decoration: none;
+					color: #000000;
+				
+					.program {
+					    background: #FFFFFF;
+					    border: 1px solid #E6E6E6;
+					    width: calc(~"100% - 82px");
+					    padding: 20px;
+					    margin: 20px;
+					    border-radius: 5px;
+						cursor: pointer;
 					
-					h1 {
-						padding: 0;
-						margin: -5px 0 0 0;
-					    font-family: -apple-system, system-ui;
-						font-weight: bold;
-					    font-size: 24px;
-						color: #000000;
-						overflow-wrap: break-word;
+						h1 {
+							padding: 0;
+							margin: -5px 0 0 0;
+						    
+							font-weight: bold;
+						    font-size: 24px;
+							color: #000000;
+							overflow-wrap: break-word;
 
-						.rating {
-						    float: right;
-						    font-size: 16px;
-							font-family: -apple-system, system-ui;
-						    font-weight: bold;
-						    background-color: lightgrey;
-						    border-radius: 30px;
-						    padding: 3px 10px;
-						    color: white;
-							margin-left: 10px;
-							margin-right: -5px;
-							margin-bottom: 5px;
+							.rating {
+							    float: right;
+							    font-size: 16px;
+								
+							    font-weight: bold;
+							    background-color: lightgrey;
+							    border-radius: 30px;
+							    padding: 3px 10px;
+							    color: white;
+								margin-left: 10px;
+								margin-right: -5px;
+								margin-bottom: 5px;
+							}
 						}
-					}
 				
-					h2 {
-						padding: 0;
-						margin: 10px 0 0 0;
-					    font-family: -apple-system, system-ui;
-						font-weight: normal;
-					    font-size: 20px;
-						color: rgba(0, 0, 0, 0.5);
-						width: 100%;
-						white-space: nowrap;
-						overflow: hidden;
-						text-overflow: ellipsis;
-					}
-				
-					.data {
-					
-						h3 {
-						    font-family: -apple-system, system-ui;
-							font-weight: normal;
-						    font-size: 15px;
+						h2 {
+							padding: 0;
 							margin: 10px 0 0 0;
+						    
+							font-weight: normal;
+						    font-size: 20px;
+							color: rgba(0, 0, 0, 0.5);
+							width: 100%;
+							white-space: nowrap;
+							overflow: hidden;
+							text-overflow: ellipsis;
+						}
+
+						.debug {
+							display: none;
+							margin-top: 20px;
+							background: #FAFAFA;
+							padding: 15px;
+							overflow: scroll;
+							border-radius: 5px;
+							font-size: 12px;
 						
-							&:first-child {
-								margin-top: 20px;
-							}
-					
-							.icon {
-								display: inline-block;
-								width: 20px;
-								height: 20px;
-								background-repeat: no-repeat;
-							    background-size: 100%;
-							    vertical-align: -5px;
-							    margin-right: 7px;
-							}
-					
-							.number {
-								display: inline-block;
-								font-weight: bold;
-							}
-					
-							&.success {
-								color: #25AA00;
-							
-								.icon {
-									background-image: url("../images/icon-success.png");
-								}
-							}
-						
-							&.wages {
-							
-								.icon {
-									background-image: url("../images/icon-money.png");
-									opacity: 0.7;
-								}
+							pre {
+								margin: 0;
 							}
 						}
 					}
 				
-					.debug {
-						display: none;
-						margin-top: 20px;
-						background: #FAFAFA;
-						padding: 15px;
-						overflow: scroll;
-						border-radius: 5px;
-						font-size: 12px;
-						
-						pre {
-							margin: 0;
-						}
-					}
 				}
 				
 				.no-results {
 				    width: 100%;
 				    height: 100%;
-				    font-family: -apple-system, system-ui;
+				    
 				    font-weight: normal;
 				    font-size: 20px;
 				    text-align: center;
@@ -494,6 +457,203 @@ html, body {
 			}
 		}
 		
+		&.program-detail-page {
+			
+			a.back {
+				text-decoration: none;
+				color: #000000;
+				opacity: 0.3;
+				
+				&:active {
+					opacity: 0.8;
+				}
+				
+				.icon {
+					width: 40px;
+				    height: 40px;
+				    display: inline-block;
+				    background-image: url("../images/icon-back.png");
+					background-repeat: no-repeat;
+					background-position: 22px 24px;
+					background-size: 10px 17px;
+				    padding-left: 8px;
+				    padding-top: 10px;
+				}
+				
+				label {
+				    font-size: 16px;
+				    color: #000000;
+					vertical-align: 12px;
+					margin-left: -8px;
+				}
+			}
+			
+			#content {
+				margin-top: 10px;
+				margin-left: 20px;
+				margin-bottom: 20px;
+				width: calc(~"100% - 40px");
+				
+				h1 {
+					padding: 0;
+					margin: -5px 0 0 0;
+				    
+					font-weight: bold;
+				    font-size: 28px;
+					color: #000000;
+					overflow-wrap: break-word;
+					margin-top: 10px;
+
+					.rating {
+					    float: right;
+					    font-size: 16px;
+						
+					    font-weight: bold;
+					    background-color: lightgrey;
+					    border-radius: 30px;
+					    padding: 3px 10px;
+					    color: white;
+						margin-left: 10px;
+						margin-right: -5px;
+						margin-bottom: 5px;
+						margin-top: 5px;
+					}
+				}
+	
+				h2 {
+					padding: 0;
+					margin: 10px 0 0 0;
+				    
+					font-weight: normal;
+				    font-size: 20px;
+					color: rgba(0, 0, 0, 0.5);
+					width: 100%;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+				
+				button {
+					height: 44px;
+				    background: #2A87EC;
+				    outline: none;
+				    
+				    font-size: 20px;
+				    margin-top: 15px;
+				    border-radius: 50px;
+					padding: 0;
+				    box-sizing: content-box;
+				    border: none;
+				    text-align: center;
+				    font-weight: bold;
+				    color: #FFFFFF;
+					line-height: 44px;
+		
+					&:active, &.active {
+						background: #1D5DA1;
+					}
+					
+					&.full-width {
+						width: 100%;
+					}
+					
+					&.half-width {
+					    width: calc(~"50% - 5px");
+						
+						&.right {
+							margin-left: 10px;
+						}
+					}
+				}
+				
+				section {
+					margin-top: 30px;
+					
+					h3 {
+						font-weight: normal;
+					    font-size: 16px;
+						color: rgba(0, 0, 0, 0.6);
+						display: block;
+						width: 100%;
+						height: 28px;
+						border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+					}
+					
+					.section-content {
+						p {
+							margin: 0;
+							display: block;
+							@line-height: 2.5ex;
+							line-height: @line-height;
+							font-size: 16px;
+							
+							&.truncated {
+								height: @line-height * 4;
+								overflow: hidden;
+								vertical-align: top;
+							}
+						}
+
+						.show-more {
+							margin-top: 5px;
+							font-weight: bold;
+						}
+						
+						img.map {
+							width: 100%;
+						}
+						
+						a.contact {
+							text-decoration: none;
+							color: #000000;
+						}
+					}
+					
+			
+					.feature {
+					    outline: none;
+						background: #71CE0B;
+						color: #FFFFFF;
+					    font-size: 17px;
+					    margin-right: 5px;
+						margin-bottom: 10px;
+					    padding: 10px 20px 10px 15px;
+					    border-radius: 50px;
+					    -webkit-appearance: none;
+					    text-align: left;
+					    width: fit-content;
+						font-weight: 500;
+						letter-spacing: -0.5px;
+						display: inline-block;
+					
+						&:last-child {
+							margin-bottom: 0px;	
+						}
+				
+						input {
+							display: none;
+						}
+				
+						.checkbox {
+							display: inline-block;
+							width: 20px;
+							height: 20px;
+							background-repeat: no-repeat;
+						    background-size: 100%;
+						    vertical-align: -4px;
+						    margin-right: 4px;
+							margin-left: -4px;
+							background-image: url("../images/checkbox-filled.png");
+							opacity: 1;
+						}
+				
+						label {
+							margin-left: 4px;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	.submit-button-wrapper {
@@ -516,7 +676,7 @@ html, body {
 		    background: #2A87EC;
 		    width: calc(~"100% - 40px");
 		    outline: none;
-		    font-family: -apple-system, system-ui;
+		    
 		    font-size: 20px;
 		    margin-top: 15px;
 		    margin-left: 20px;
@@ -536,5 +696,53 @@ html, body {
 			}
 		}
 	}
+	
+	// SHARED
+
+	.data {
+
+		h3 {
+		    
+			font-weight: normal;
+		    font-size: 15px;
+			margin: 10px 0 0 0;
+	
+			&:first-child {
+				margin-top: 20px;
+			}
+
+			.icon {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				background-repeat: no-repeat;
+			    background-size: 100%;
+			    vertical-align: -5px;
+			    margin-right: 7px;
+			}
+
+			.number {
+				display: inline-block;
+				font-weight: bold;
+			}
+
+			&.success {
+				color: #25AA00;
+		
+				.icon {
+					background-image: url("../images/icon-success.png");
+				}
+			}
+	
+			&.wages {
+		
+				.icon {
+					background-image: url("../images/icon-money.png");
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+	
 	
 }
