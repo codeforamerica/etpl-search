@@ -34,7 +34,7 @@
 	if(mysqli_num_rows($programs) > 0) {
 		while($program = mysqli_fetch_assoc($programs)) {
 			$rating = generate_rating($program);
-			$sort = $rating["total"]."-".$program_name;
+			$sort = $rating["total"]."-".str_replace(" ", "_", $program["program_name"]).$program["program_id"];
 			$program_list[$sort] = $program;
 			$program_list[$sort]["rating"] = $rating;
 		}
@@ -47,7 +47,7 @@
 	foreach($program_list as $sort => $program) {
 		?>
 			<a href="program.php?id=<?php echo $program["program_id"];?>" class="program-link-wrapper">
-				<div class="program">
+				<div class="program" id="<?php echo $sort; ?>">
 					<h1><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php echo $program["program_name"];?></h1>
 					<h2><?php echo $program["provider_name"];?></h2>
 					<div class="data">

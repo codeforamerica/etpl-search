@@ -7,7 +7,7 @@ $(document).ready(function() {
 	
 	$(".show-more").click(function() {
 		$(this).hide()
-		$("p.truncated#"+$(this).attr("id")).removeClass("truncated")();
+		$("p.truncated#"+$(this).attr("id")).removeClass("truncated");
 	});
 	
 });
