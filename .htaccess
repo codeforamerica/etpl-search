@@ -2,7 +2,8 @@ RewriteEngine On
 
 ## Force SSL
 
-# Only if not localhost
+# Only if not localhost or port 8888
+RewriteCond %{SERVER_PORT} !^8888$
 RewriteCond %{HTTP_HOST} !=localhost
 
 # Normal way (in case you need to deploy to NON-heroku)

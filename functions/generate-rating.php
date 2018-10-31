@@ -74,6 +74,7 @@
 			$rating_components_total += $rating_components_value;
 		}
 		$rating_components_total = convert_range($rating_components_total, count($rating_components), 0, 10, 1);
+		if($rating_components_total > 10) { $rating_components_total = 10; }
 	
 		// Calculate color
 		if($rating_components_total > 0 && $rating_components_total <= 2) { $rating_color = "#E53300"; }

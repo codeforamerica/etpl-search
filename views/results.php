@@ -34,13 +34,15 @@
 	if(mysqli_num_rows($programs) > 0) {
 		while($program = mysqli_fetch_assoc($programs)) {
 			$rating = generate_rating($program);
-			$sort = $rating["total"]."-".str_replace(" ", "_", $program["program_name"]).$program["program_id"];
+			$sort = str_pad($rating["total"], 5, '0', STR_PAD_LEFT)."-".str_replace(" ", "_", $program["program_name"]).$program["program_id"];
 			$program_list[$sort] = $program;
 			$program_list[$sort]["rating"] = $rating;
 		}
 	} else {
 		echo '<div class="no-results">Sorry, no matches...</div>';
 	}
+
+	mysqli_close($db);
 	
 	krsort($program_list);
 	
@@ -70,6 +72,4 @@
 			</a>
 		<?php
 	}
-
-	mysqli_close($db);
 ?>
