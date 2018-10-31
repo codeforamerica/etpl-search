@@ -28,7 +28,7 @@
 	}
 
 	$query = "SELECT * FROM programs ".$additional_query." LIMIT 250";
-	// echo $query;
+	echo $query;
 	$programs = mysqli_query($db, $query);
 
 	if(mysqli_num_rows($programs) > 0) {
