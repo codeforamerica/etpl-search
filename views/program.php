@@ -92,7 +92,7 @@
 					<h3>Program Info</h3>
 					<div class="section-content">
 						<table>
-							<tr><td class="label">Cost Pre-Subsidy</td><td class="value"><?php echo $program["cost_total"]; ?></td></tr>
+							<tr><td class="label">Cost</td><td class="value"><?php echo $program["cost_total"]; ?></td></tr>
 							
 							<?php if($program["info_clock_hours"] != "") { ?>
 								<tr><td class="label">Hours</td><td class="value"><?php echo $program["info_clock_hours"]; ?></td></tr>
