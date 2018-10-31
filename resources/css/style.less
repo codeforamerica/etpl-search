@@ -1,6 +1,16 @@
 @mobile: ~"only screen and (max-width: 667px)";
 @desktop: ~"only screen and (min-width: 668px)";
 
+.wrapper-desktop-styling() {
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	
+}
+
 * {
 	-webkit-font-smoothing: antialiased;
 	-webkit-appearance: none;
@@ -51,7 +61,10 @@ html, body {
 		&.search {
 			position: absolute;
 			
-
+			@media @desktop {
+				margin-top: 100px;
+				.wrapper-desktop-styling();
+			}
 			
 			#people-wrapper {
 			    width: 100%;
@@ -460,6 +473,10 @@ html, body {
 		}
 		
 		&.program-detail-page {
+			
+			@media @desktop {
+				.wrapper-desktop-styling();
+			}
 			
 			a.back {
 				text-decoration: none;
