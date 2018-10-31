@@ -91,7 +91,7 @@
 				<section>
 					<h3>Location</h3>
 					<div class="section-content">
-						<img src="https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x250&markers=<?php echo urlencode($program["provider_address"]); ?>&key=AIzaSyAdzf6wnfWspcIZ360kRuIiVq1kpePPSGo" class="map">
+						<img src="https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=600x250&scale=2&markers=<?php echo urlencode($program["provider_address"]); ?>&key=AIzaSyAdzf6wnfWspcIZ360kRuIiVq1kpePPSGo" class="map">
 						<p style="margin-top: 10px;">
 							<b><?php echo $program["provider_name"]; ?></b>
 							<br>
