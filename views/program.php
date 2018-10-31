@@ -30,7 +30,12 @@
 	mysqli_close($db);
 	
 	$description_limit = 350;
-	$research_prompt_position = rand(0, 15);
+	
+	if(isset($_GET["force_research_prompt"])) {
+		$research_prompt_position = $_GET["force_research_prompt"];
+	} else {
+		$research_prompt_position = rand(0, 15);
+	}
 ?>
 <!DOCTYPE HTML>
 <html>
