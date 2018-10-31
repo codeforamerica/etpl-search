@@ -27,6 +27,22 @@ function init_mixpanel_events() {
 	}
 }
 
+function set_cookie(name, value, days) {
+    var date, expires;
+    if (days) {
+        date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        expires = "; expires="+date.toGMTString();
+    } else {
+        expires = "";
+    }
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function dont_show_reserch_prompt_again() {
+	set_cookie("research-prompt-closed", 1, 3);
+}
+
 $(document).ready(function() {
 	
 	preload_images([
@@ -37,4 +53,14 @@ $(document).ready(function() {
 		init_mixpanel_events();	
 	}
 		
+	$(".program.special .close").click(function(e) {
+		$(this).parent(".program.special").hide();
+		dont_show_reserch_prompt_again();
+		e.preventDefault();
+		e.stopPropagation();
+	});
+	
+	$("#research-prompt").click(function() {
+		dont_show_reserch_prompt_again();
+	});
 });

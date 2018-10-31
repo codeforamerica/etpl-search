@@ -1,7 +1,8 @@
 <?php
 	if(	$_SERVER["REMOTE_ADDR"] == "localhost" ||
 		$_SERVER["REMOTE_ADDR"] == "leo.local" ||
-		$_SERVER["REMOTE_ADDR"] == "::1"
+		$_SERVER["REMOTE_ADDR"] == "::1" ||
+		strpos($_SERVER["REMOTE_ADDR"], '192.168.1') !== false
 	) {
 		$db = mysqli_connect("localhost", "root", "root", "nj-etpl");
 	} else {

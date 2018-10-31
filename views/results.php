@@ -41,35 +41,34 @@
 	} else {
 		echo '<div class="no-results">Sorry, no matches...</div>';
 	}
-
+	
 	mysqli_close($db);
 	
 	krsort($program_list);
+	$list_index = 0;
+	$research_prompt_position = rand(4, 8);
 	
 	foreach($program_list as $sort => $program) {
+		$list_index++;
+?>
+		<?php
+			if($list_index == $research_prompt_position) {
+				include("../views/shared/research-prompt.php");
+			}
 		?>
-			<a href="program.php?id=<?php echo $program["program_id"];?>" class="program-link-wrapper">
-				<div class="program" id="<?php echo $sort; ?>">
-					<h1><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php echo $program["program_name"];?></h1>
-					<h2><?php echo $program["provider_name"];?></h2>
-					<div class="data">
-						<?php if($program["outcomes_data_6_months_this_program_employment_rate_value"] != "N/A") { ?>
-							<h3 class="success"><div class="icon"></div><div class="number"><?php echo $program["outcomes_data_6_months_this_program_employment_rate_value"]; ?></div> employed after 6 months</h3>
-						<?php } ?>
-					
-						<?php if($program["outcomes_data_6_months_this_program_wage_yearly_value"] != "N/A") { ?>
-							<h3 class="wages"><div class="icon"></div><div class="number">$<?php echo number_format(round(int(str_replace("$", "", $program["outcomes_data_6_months_this_program_wage_yearly_value"])), 1)); ?></div> salary after 6 months</h3>
-						<?php } ?>
-					
-						<?php if($program["outcomes_data_2_years_this_program_wage_yearly_value"] != "N/A") { ?>
-							<h3 class="wages"><div class="icon"></div><div class="number">$<?php echo number_format(round(int(str_replace("$", "", $program["outcomes_data_2_years_this_program_wage_yearly_value"])), 1)); ?></div> salary after 2 years</h3>
-						<?php } ?>
-					</div>
-					<div class="debug">
-						<pre><?php print_r($program["rating"]["components"]); ?></pre>
-					</div>
+		
+		<a href="program.php?id=<?php echo $program["program_id"];?>" class="program-link-wrapper">
+			<div class="program" id="<?php echo $sort; ?>">
+				<h1><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php echo $program["program_name"];?></h1>
+				<h2><?php echo $program["provider_name"];?></h2>
+				<div class="data">
+					<?php include("shared/program-data.php"); ?>
 				</div>
-			</a>
+				<div class="debug">
+					<pre><?php print_r($program["rating"]["components"]); ?></pre>
+				</div>
+			</div>
+		</a>
 		<?php
 	}
 ?>

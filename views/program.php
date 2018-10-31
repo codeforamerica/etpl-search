@@ -28,6 +28,9 @@
 	}
 
 	mysqli_close($db);
+	
+	$description_limit = 350;
+	$research_prompt_position = rand(0, 15);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -50,28 +53,22 @@
 			</a>
 			<div id="content">
 				<h1><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php echo $program["program_name"];?></h1>
-				<h2><?php echo $program["provider_name"];?></h2>
+				<h2><a target="_blank" href="<?php echo $program["provider_website"]; ?>"><?php echo $program["provider_name"]; ?></a></h2>
 				<div class="data">
-					<?php if($program["outcomes_data_6_months_this_program_employment_rate_value"] != "N/A") { ?>
-						<h3 class="success"><div class="icon"></div><div class="number"><?php echo $program["outcomes_data_6_months_this_program_employment_rate_value"]; ?></div> employed after 6 months</h3>
-					<?php } ?>
-				
-					<?php if($program["outcomes_data_6_months_this_program_wage_yearly_value"] != "N/A") { ?>
-						<h3 class="wages"><div class="icon"></div><div class="number">$<?php echo number_format(round(int(str_replace("$", "", $program["outcomes_data_6_months_this_program_wage_yearly_value"])), 1)); ?></div> salary after 6 months</h3>
-					<?php } ?>
-				
-					<?php if($program["outcomes_data_2_years_this_program_wage_yearly_value"] != "N/A") { ?>
-						<h3 class="wages"><div class="icon"></div><div class="number">$<?php echo number_format(round(int(str_replace("$", "", $program["outcomes_data_2_years_this_program_wage_yearly_value"])), 1)); ?></div> salary after 2 years</h3>
-					<?php } ?>
+					<?php include("shared/program-data.php"); ?>
 				</div>
+				
+				<?php if($research_prompt_position == 0) { include("../views/shared/research-prompt.php"); } ?>
 				
 				<section>
 					<h3>Description</h3>
 					<div class="section-content">
-						<p id="description" <?php if(strlen($program["description_short"]) > 5) { echo 'class="truncated"'; } ?>><?php echo $program["description_short"]; ?></p>
-						<div class="show-more" id="description">Continue Reading...</div>
+						<p id="description" <?php if(strlen($program["description_short"]) > $description_limit) { echo 'class="truncated"'; } ?>><?php echo $program["description_short"]; ?></p>
+						<?php if(strlen($program["description_short"]) > $description_limit) { ?><div class="show-more" id="description">Continue Reading...</div><?php } ?>
 					</div>
 				</section>
+				
+				<?php if($research_prompt_position == 1) { include("../views/shared/research-prompt.php"); } ?>
 				
 				<section>
 					<h3>Contact Info</h3>
@@ -83,22 +80,59 @@
 							<a class="contact" href="tel:<?php echo $program["contact_phone_number"]; ?><?php if($program["contact_phone_number_ext"] != "") { echo ",".$program["contact_phone_number_ext"]; } ?>"><?php echo $program["contact_phone_number"]; if($program["contact_phone_number_ext"] != "") { echo " ext ".$program["contact_phone_number_ext"]; } ?></a>
 						</p>
 					</div>
+					<a href="mailto:<?php echo $program["contact_email"]; ?>"><button class="half-width left">Email</button></a><a href="tel:<?php echo $program["contact_phone_number"]; ?><?php if($program["contact_phone_number_ext"] != "") { echo ",".$program["contact_phone_number_ext"]; } ?>"><button class="half-width right">Call</button></a>
+				</section>
+								
+				<section>
+					<h3>Program Info</h3>
+					<div class="section-content">
+						<table>
+							<tr><td class="label">Cost Pre-Subsidy</td><td class="value"><?php echo $program["cost_total"]; ?></td></tr>
+							
+							<?php if($program["info_clock_hours"] != "") { ?>
+								<tr><td class="label">Hours</td><td class="value"><?php echo $program["info_clock_hours"]; ?></td></tr>
+							<?php } ?>
+							
+							<?php if($program["info_credit_hours"] != "") { ?>
+								<tr><td class="label">Credit Hours</td><td class="value"><?php echo $program["info_credit_hours"]; ?></td></tr>
+							<?php } ?>
+							
+							<?php if($program["info_calendar_length"] != "") { ?>
+								<tr><td class="label">Length</td><td class="value"><?php echo $program["info_calendar_length"]; ?></td></tr>
+							<?php } ?>
+														
+							<?php if($program["credentials_credential"] != "0") { ?>
+								<tr><td class="label">Credential</td><td class="value"><?php echo $program["credentials_credential"]; ?></td></tr>
+							<?php } ?>
+
+							<?php if($program["credentials_degree"] != "0") { ?>
+								<tr><td class="label">Degree</td><td class="value"><?php echo $program["credentials_degree"]; ?></td></tr>
+							<?php } ?>
+
+							<?php if($program["credentials_license"] != "0") { ?>
+								<tr><td class="label">License</td><td class="value"><?php echo $program["credentials_license"]; ?></td></tr>
+							<?php } ?>
+						</table>
+					</div>
 				</section>
 				
-				<a href="mailto:<?php echo $program["contact_email"]; ?>"><button class="half-width left">Email</button></a><a href="tel:<?php echo $program["contact_phone_number"]; ?><?php if($program["contact_phone_number_ext"] != "") { echo ",".$program["contact_phone_number_ext"]; } ?>"><button class="half-width right">Call</button></a>
-				
+				<?php if($research_prompt_position == 2) { include("../views/shared/research-prompt.php"); } ?>
 
 				<section>
 					<h3>Location</h3>
 					<div class="section-content">
-						<img src="https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=600x250&scale=2&markers=<?php echo urlencode($program["provider_address"]); ?>&key=AIzaSyAdzf6wnfWspcIZ360kRuIiVq1kpePPSGo" class="map">
-						<p style="margin-top: 10px;">
-							<b><?php echo $program["provider_name"]; ?></b>
-							<br>
-							<?php echo str_replace(",", "<br>", $program["provider_address"]); ?>
-						</p>
+						<a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo urlencode($program["provider_address"]); ?>" class="map">
+							<img src="https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x200&scale=2&markers=<?php echo urlencode($program["provider_address"]); ?>&key=AIzaSyAdzf6wnfWspcIZ360kRuIiVq1kpePPSGo" class="map">
+							<p style="margin-top: 10px;">
+								<b><?php echo $program["provider_name"]; ?></b>
+								<br>
+								<?php echo str_replace(",", "<br>", $program["provider_address"]); ?>
+							</p>
+						</a>
 					</div>
 				</section>
+				
+				<?php if($research_prompt_position == 3) { include("../views/shared/research-prompt.php"); } ?>
 				
 				<section>
 					<h3>Features</h3>
@@ -110,6 +144,8 @@
 						<?php } ?>
 					</div>
 				</section>
+				
+				<?php if($research_prompt_position == 4) { include("../views/shared/research-prompt.php"); } ?>
 			</div>
 		</div>
 		

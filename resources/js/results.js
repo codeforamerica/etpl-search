@@ -1,13 +1,13 @@
-function update_results(options) {
+function update_results(filter_options) {
 	var input = $("#wrapper.results .header-wrapper form input");
 	var query = input.val();
-	options = $("#wrapper.results .header-wrapper form").serialize();
+	filter_options = $("#wrapper.results .header-wrapper form").serialize();
 	
-	$.get("results.php?"+options, function(results_data) {
+	$.get("results.php?"+filter_options, function(results_data) {
 		$("#results-wrapper").html(results_data);
 	});
 	
-    window.history.pushState("", "", "results-wrapper.php?"+options);
+    window.history.pushState("", "", "results-wrapper.php?"+filter_options);
 	
 	$("#results-wrapper").scrollTop(0);
 	$("body").scrollTop(0);
@@ -15,13 +15,15 @@ function update_results(options) {
 
 $(document).ready(function() { 
 	
-	var search = location.search.substring(1);
-	var json_search = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
+	var search_query = location.search.substring(1);
+	if(search_query) {
+		var json_search_query = JSON.parse('{"' + decodeURI(search_query).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
 		
-	var options = json_search;
-	$("input[type='checkbox']").each(function() {
-		options[$(this).attr("name")] = $(this).val();
-	});
+		var filter_options = json_search_query;
+		$("input[type='checkbox']").each(function() {
+			filter_options[$(this).attr("name")] = $(this).val();
+		});
+	}
 	
 	$("#results-wrapper").scrollTop(0);
 	$("body").scrollTop(0);
@@ -50,7 +52,7 @@ $(document).ready(function() {
 		}
 		
 		if($("#wrapper").hasClass("results")) {
-			update_results(options);
+			update_results(filter_options);
 		}
 	});
 	

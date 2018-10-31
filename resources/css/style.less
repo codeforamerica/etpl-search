@@ -22,6 +22,16 @@
 	
 }
 
+a {
+	text-decoration: none;
+	color: #000000;
+    cursor: pointer;
+	
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
@@ -391,73 +401,6 @@ html, body {
 				width: 100%;
 				z-index: 1;
 				
-				a.program-link-wrapper {
-					text-decoration: none;
-					color: #000000;
-				
-					.program {
-					    background: #FFFFFF;
-					    border: 1px solid #E6E6E6;
-					    width: calc(~"100% - 82px");
-					    padding: 20px;
-					    margin: 20px;
-					    border-radius: 5px;
-						cursor: pointer;
-					
-						h1 {
-							padding: 0;
-							margin: -5px 0 0 0;
-						    
-							font-weight: bold;
-						    font-size: 24px;
-							color: #000000;
-							overflow-wrap: break-word;
-
-							.rating {
-							    float: right;
-							    font-size: 16px;
-								
-							    font-weight: bold;
-							    background-color: lightgrey;
-							    border-radius: 30px;
-							    padding: 3px 10px;
-							    color: white;
-								margin-left: 10px;
-								margin-right: -5px;
-								margin-bottom: 5px;
-							}
-						}
-				
-						h2 {
-							padding: 0;
-							margin: 10px 0 0 0;
-						    
-							font-weight: normal;
-						    font-size: 20px;
-							color: rgba(0, 0, 0, 0.5);
-							width: 100%;
-							white-space: nowrap;
-							overflow: hidden;
-							text-overflow: ellipsis;
-						}
-
-						.debug {
-							display: none;
-							margin-top: 20px;
-							background: #FAFAFA;
-							padding: 15px;
-							overflow: scroll;
-							border-radius: 5px;
-							font-size: 12px;
-						
-							pre {
-								margin: 0;
-							}
-						}
-					}
-				
-				}
-				
 				.no-results {
 				    width: 100%;
 				    height: 100%;
@@ -541,8 +484,7 @@ html, body {
 	
 				h2 {
 					padding: 0;
-					margin: 10px 0 0 0;
-				    
+					margin: 10px 0 0 0;				    
 					font-weight: normal;
 				    font-size: 20px;
 					color: rgba(0, 0, 0, 0.5);
@@ -550,38 +492,20 @@ html, body {
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
+							
+					a {
+						color: rgba(0, 0, 0, 0.5);
+					}
 				}
 				
-				button {
-					height: 44px;
-				    background: #2A87EC;
-				    outline: none;
-				    
-				    font-size: 20px;
-				    margin-top: 15px;
-				    border-radius: 50px;
-					padding: 0;
-				    box-sizing: content-box;
-				    border: none;
-				    text-align: center;
-				    font-weight: bold;
-				    color: #FFFFFF;
-					line-height: 44px;
-		
-					&:active, &.active {
-						background: #1D5DA1;
-					}
+				a.program-link-wrapper .program.special {
+					width: calc(~"100% - 40px");
+					margin-left: 0;
 					
-					&.full-width {
-						width: 100%;
-					}
-					
-					&.half-width {
-					    width: calc(~"50% - 5px");
-						
-						&.right {
-							margin-left: 10px;
-						}
+					h1 {
+						font-size: 22px;
+						color: #FFFFFF;
+						margin: -5px 0 0 0;
 					}
 				}
 				
@@ -594,8 +518,9 @@ html, body {
 						color: rgba(0, 0, 0, 0.6);
 						display: block;
 						width: 100%;
-						height: 28px;
 						border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+						padding-bottom: 10px;
+						margin-bottom: 10px;
 					}
 					
 					.section-content {
@@ -614,20 +539,53 @@ html, body {
 						}
 
 						.show-more {
-							margin-top: 5px;
 							font-weight: bold;
+						    cursor: pointer;
 						}
 						
-						img.map {
-							width: 100%;
+						a.map {
+							img.map {
+								width: 100%;
+							}
+							
+							&:hover {
+								text-decoration: none;
+							}
 						}
 						
 						a.contact {
 							text-decoration: none;
 							color: #000000;
+							
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+						
+						table {
+							width: 100%;
+							margin: -5px 0 0 0;
+							border-collapse: separate; 
+							border-spacing: 0;
+							
+							td {
+								border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+								padding: 10px 0;
+							}
+							
+							tr:last-child td {
+								border-bottom: none;
+							}
+							
+							td.label {
+								color: rgba(0, 0, 0, 0.4);
+							}
+							
+							td.value {
+								text-align: right;
+							}
 						}
 					}
-					
 			
 					.feature {
 					    outline: none;
@@ -718,6 +676,45 @@ html, body {
 	
 	// SHARED
 
+	button {
+		height: 44px;
+	    background: #2A87EC;
+	    outline: none;
+	    cursor: pointer;
+	    font-size: 20px;
+	    margin-top: 15px;
+	    border-radius: 50px;
+		padding: 0;
+	    box-sizing: content-box;
+	    border: none;
+	    text-align: center;
+	    font-weight: bold;
+	    color: #FFFFFF;
+		line-height: 44px;
+
+		&:active, &.active {
+			background: #1D5DA1;
+		}
+		
+		&.full-width {
+			width: 100%;
+		}
+		
+		&.half-width {
+		    width: calc(~"50% - 5px");
+			
+			&.right {
+				margin-left: 10px;
+			}
+		}
+		
+		&.small {
+		    font-size: 16px;
+		    height: 36px;
+		    line-height: 36px;
+		}
+	}
+	
 	.data {
 
 		h3 {
@@ -745,11 +742,38 @@ html, body {
 				font-weight: bold;
 			}
 
-			&.success {
-				color: #25AA00;
+			&.employment-rate {
+				&.good {
+					color: #25AA00;
+		
+					.icon {
+						background-image: url("../images/icon-employment-rate-good.png");
+					}
+				}
+				
+				&.ok {
+					color: #EBA51E;
+		
+					.icon {
+						background-image: url("../images/icon-employment-rate-ok.png");
+					}
+				}
+				
+				&.bad {
+					color: #E53300;
+		
+					.icon {
+						background-image: url("../images/icon-employment-rate-bad.png");
+					}
+				}
+			}
+	
+			&.no-data {
+				color: rgba(0, 0, 0, 0.35);
 		
 				.icon {
-					background-image: url("../images/icon-success.png");
+					background-image: url("../images/icon-no-data.png");
+					opacity: 0.3;
 				}
 			}
 	
@@ -762,6 +786,125 @@ html, body {
 			}
 		}
 	}
+	
+	a.program-link-wrapper {
+		text-decoration: none;
+		color: #000000;
+	
+		.program {
+		    background: #FFFFFF;
+		    border: 1px solid #E6E6E6;
+		    width: calc(~"100% - 82px");
+		    padding: 20px;
+		    margin: 20px;
+		    border-radius: 5px;
+			cursor: pointer;
+		
+			h1 {
+				padding: 0;
+				margin: -5px 0 0 0;
+				font-weight: bold;
+			    font-size: 24px;
+				color: #000000;
+				overflow-wrap: break-word;
+
+				.rating {
+				    float: right;
+				    font-size: 16px;
+				    font-weight: bold;
+				    background-color: lightgrey;
+				    border-radius: 30px;
+				    padding: 3px 10px;
+				    color: white;
+					margin-left: 10px;
+					margin-right: -5px;
+					margin-bottom: 5px;
+				}
+			}
+	
+			h2 {
+				padding: 0;
+				margin: 10px 0 0 0;
+				font-weight: normal;
+			    font-size: 20px;
+				color: rgba(0, 0, 0, 0.5);
+				width: 100%;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+			.debug {
+				display: none;
+				margin-top: 20px;
+				background: #FAFAFA;
+				padding: 15px;
+				overflow: scroll;
+				border-radius: 5px;
+				font-size: 12px;
+			
+				pre {
+					margin: 0;
+				}
+			}
+			
+			&.special {
+				background: #2A87EC;
+			    border: 1px solid #2A87EC;
+				color: #FFFFFF;
+				
+				h1 {
+					font-size: 22px;
+					color: #FFFFFF;
+				}
+				
+				.close {
+				    width: 40px;
+				    height: 40px;
+				    display: inline-block;
+				    background-image: url("../images/icon-x.png");
+				    background-repeat: no-repeat;
+				    background-size: 50%;
+				    float: right;
+				    margin-right: -22px;
+				    margin-top: -3px;
+				    opacity: 0.7;
+					
+					&:active {
+						opacity: 1;
+					}
+				}
+				
+				.description {
+					font-size: 16px;
+					color: rgba(255, 255, 255, 1);
+					line-height: 20px;
+					margin-top: 10px;
+					font-weight: bold;
+					
+					&.small {
+						font-weight: normal;
+						color: rgba(255, 255, 255, 0.7);
+						font-size: 14px;
+						line-height: 18px;
+						margin-top: 10px;	
+						margin-bottom: 5px;		
+					}
+				}
+				
+				button {
+					background: #FFFFFF;
+					color: #000000;
+					
+					&:active, &.active {
+						background: rgba(255, 255, 255, 0.8);
+					}
+				}
+			}
+		}
+	
+	}
+	
 	
 	
 }
