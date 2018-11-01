@@ -39,10 +39,6 @@ function set_cookie(name, value, days) {
     document.cookie = name+"="+value+expires+"; path=/";
 }
 
-function dont_show_reserch_prompt_again() {
-	set_cookie("research-prompt-closed", 1, 3);
-}
-
 $(document).ready(function() {
 	
 	preload_images([
@@ -55,12 +51,14 @@ $(document).ready(function() {
 		
 	$(".program.special .close").click(function(e) {
 		$(this).parent(".program.special").hide();
-		dont_show_reserch_prompt_again();
+		// if x is clicked, don't show prompt again for 3 days
+		set_cookie("research-prompt-closed", 1, 3);
 		e.preventDefault();
 		e.stopPropagation();
 	});
 	
 	$("#research-prompt").click(function() {
-		dont_show_reserch_prompt_again();
+		// if link is clicked, don't show prompt again for 7 days
+		set_cookie("research-prompt-closed", 1, 7);
 	});
 });
