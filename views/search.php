@@ -17,13 +17,11 @@
         <div id="people"></div>
       </div>
       <h1>Find the best training for your next job.</h1>
-      <br>
+      <h2>This is a list of job training programs that are eligible to receive publically funded tuition assistance.</h2>
       <form method="GET" action="results-wrapper.php">
         <input type="text" class="location" value="New Jersey" disabled>
-        <br>
         <input type="search" class="search" placeholder="Type a skill area..." name="query" autocomplete="off">
         <input type="submit" value="" class="circle">
-        <br>
         <h3>Filters</h2>
         <div id="checkboxes">
           <?php include("shared/filters.php"); ?>

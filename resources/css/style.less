@@ -14,8 +14,8 @@
 * {
 	-webkit-font-smoothing: antialiased;
 	-webkit-appearance: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    font-family: -apple-system, system-ui;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	font-family: -apple-system, system-ui;
 }
 
 ::selection {
@@ -25,7 +25,7 @@
 a {
 	text-decoration: none;
 	color: #000000;
-    cursor: pointer;
+	cursor: pointer;
 	
 	&:hover {
 		text-decoration: underline;
@@ -77,10 +77,10 @@ html, body {
 			}
 			
 			#people-wrapper {
-			    width: 100%;
-			    position: absolute;
-			    overflow-x: hidden;
-			    height: 86px;
+				width: 100%;
+				position: absolute;
+				overflow-x: hidden;
+				height: 86px;
 				top: 20px;
 				
 				#people {
@@ -90,47 +90,59 @@ html, body {
 					background-repeat: no-repeat;
 					background-size: 100%;
 					position: absolute;
-				    left: 50%;
-				    margin-left: -217px;
+					left: 50%;
+					margin-left: -217px;
 					top: 0;
 				}
 			}
 		
 			h1 {
-			    
-			    font-size: 34px;
-			    color: #000000;
-			    line-height: 40px;
-			    margin-top: 110px;
-			    width: calc(~"100% - 40px");
-			    margin-left: 20px;
+				font-size: 34px;
+				color: #000000;
+				line-height: 40px;
+				margin-top: 110px;
+				width: calc(~"100% - 40px");
+				margin-left: 20px;
+				margin-bottom: 0px;
+			}
+			
+			h2 {
+				font-size: 17px;
+				font-weight: normal;
+				color: rgba(0, 0, 0, 0.5);
+				line-height: 23px;
+				margin-top: 10px;
+				width: calc(~"100% - 40px");
+				margin-left: 20px;
 				margin-bottom: 0px;
 			}
 			
 			h3 {
-			    
-			    font-weight: normal;
-			    font-size: 14px;
-			    color: rgba(0, 0, 0, 0.25);
-			    overflow-wrap: break-word;
-			    margin: 20px 0 0 20px;
-			    text-transform: uppercase;
-			    letter-spacing: 2px;
+				font-weight: normal;
+				font-size: 14px;
+				color: rgba(0, 0, 0, 0.25);
+				overflow-wrap: break-word;
+				margin: 20px 0 0 20px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
 			}
-		
+			
+			form {
+				margin-top: 10px;
+			}
+			
 			input[type="text"], input[type="search"] {
 				background: #FAFAFA;
-			    border: 1px solid #E6E6E6;
-			    width: calc(~"100% - 60px");
+				border: 1px solid #E6E6E6;
+				width: calc(~"100% - 62px");
 				height: 22px;
-			    outline: none;
-			    
-			    font-size: 20px;
-			    margin-left: 20px;
+				outline: none;			    
+				font-size: 20px;
+				margin-left: 20px;
 				margin-top: 10px;
-			    padding: 12px 10px;
-			    border-radius: 50px;
-			    text-indent: 40px;
+				padding: 12px 10px;
+				border-radius: 50px;
+				text-indent: 40px;
 				background-size: 20px;
 				background-repeat: no-repeat;
 				background-position: 17px 14px;
@@ -158,21 +170,20 @@ html, body {
 			
 			input[type="submit"].circle {
 				position: absolute;
-			    height: 38px;
-			    width: 38px;
-			    background-color: #2A87EC;
-			    outline: none;
-			    
-			    font-size: 15px;
-			    margin-top: 15px;
-			    margin-left: -48px;
-			    border-radius: 40px;
-			    background-size: 20px;
-			    background-repeat: no-repeat;
-			    background-position: 9px 9px;
-			    padding: 0;
-			    box-sizing: content-box;
-			    border: none;
+				height: 38px;
+				width: 38px;
+				background-color: #2A87EC;
+				outline: none;		    
+				font-size: 15px;
+				margin-top: 15px;
+				margin-left: -43px;
+				border-radius: 40px;
+				background-size: 20px;
+				background-repeat: no-repeat;
+				background-position: 9px 9px;
+				padding: 0;
+				box-sizing: content-box;
+				border: none;
 				background-image: url("../images/icon-search-white.png");
 				
 				&:active {
@@ -191,16 +202,16 @@ html, body {
 			
 				.checkbox-wrapper {
 					background: #F5F5F5;
-				    outline: none;
+					outline: none;
 				    
-				    font-size: 17px;
-				    margin-right: 5px;
+					font-size: 17px;
+					margin-right: 5px;
 					margin-bottom: 10px;
-				    padding: 10px 20px 10px 15px;
-				    border-radius: 50px;
-				    -webkit-appearance: none;
-				    text-align: center;
-				    width: fit-content;
+					padding: 10px 20px 10px 15px;
+					border-radius: 50px;
+					-webkit-appearance: none;
+					text-align: center;
+					width: fit-content;
 					font-weight: 500;
 					letter-spacing: -0.5px;
 					display: inline-block;
@@ -222,9 +233,9 @@ html, body {
 						width: 20px;
 						height: 20px;
 						background-repeat: no-repeat;
-					    background-size: 100%;
-					    vertical-align: -4px;
-					    margin-right: 4px;
+						background-size: 100%;
+						vertical-align: -4px;
+						margin-right: 4px;
 						margin-left: -4px;
 						background-image: url("../images/checkbox-empty.png");
 						opacity: 0.4;
@@ -267,14 +278,14 @@ html, body {
 				form {
 					a.back {
 						width: 40px;
-					    height: 40px;
-					    display: inline-block;
-					    background-image: url("../images/icon-back.png");
+						height: 40px;
+						display: inline-block;
+						background-image: url("../images/icon-back.png");
 						background-repeat: no-repeat;
 						background-position: 22px 24px;
 						background-size: 10px 17px;
-					    padding-left: 8px;
-					    padding-top: 10px;
+						padding-left: 8px;
+						padding-top: 10px;
 						opacity: 0.3;
 						
 						&:active {
@@ -284,20 +295,20 @@ html, body {
 					
 					input[type="text"], input[type="search"] {
 						background: #FAFAFA;
-					    border: 1px solid #E6E6E6;
-					    width: calc(~"100% - 94px");
-					    outline: none;
+						border: 1px solid #E6E6E6;
+						width: calc(~"100% - 94px");
+						outline: none;
 					    
-					    font-size: 16px;
-					    padding: 7px 10px;
-					    border-radius: 50px;
-					    text-indent: 27px;
-					    background-size: 17px;
-					    background-repeat: no-repeat;
-					    background-position: 12px 8px;
-					    margin-top: 15px;
-					    box-sizing: content-box;
-					    vertical-align: top;
+						font-size: 16px;
+						padding: 7px 10px;
+						border-radius: 50px;
+						text-indent: 27px;
+						background-size: 17px;
+						background-repeat: no-repeat;
+						background-position: 12px 8px;
+						margin-top: 15px;
+						box-sizing: content-box;
+						vertical-align: top;
 		
 						&::placeholder {
 							color: rgba(0, 0, 0, 0.2);
@@ -336,14 +347,14 @@ html, body {
 							
 								.checkbox-wrapper {
 									background: #F5F5F5;
-								    outline: none;
+									outline: none;
 								    
-								    font-size: 14px;
-								    margin-right: 5px;
-								    padding: 6px 12px 6px 7px;
-								    border-radius: 50px;
-								    text-align: center;
-								    width: fit-content;
+									font-size: 14px;
+									margin-right: 5px;
+									padding: 6px 12px 6px 7px;
+									border-radius: 50px;
+									text-align: center;
+									width: fit-content;
 									display: inline-block;
 				
 									&:active {
@@ -359,9 +370,9 @@ html, body {
 										width: 17px;
 										height: 17px;
 										background-repeat: no-repeat;
-									    background-size: 100%;
-									    vertical-align: -3px;
-									    margin-right: 1px;
+										background-size: 100%;
+										vertical-align: -3px;
+										margin-right: 1px;
 										background-image: url("../images/checkbox-empty.png");
 										opacity: 0.4;
 									}
@@ -402,15 +413,15 @@ html, body {
 				z-index: 1;
 				
 				.no-results {
-				    width: 100%;
-				    height: 100%;
+					width: 100%;
+					height: 100%;
 				    
-				    font-weight: normal;
-				    font-size: 20px;
-				    text-align: center;
-				    padding-top: 60px;
-				    opacity: 0.2;
-				    position: fixed;
+					font-weight: normal;
+					font-size: 20px;
+					text-align: center;
+					padding-top: 60px;
+					opacity: 0.2;
+					position: fixed;
 				}
 			}
 		}
@@ -432,19 +443,19 @@ html, body {
 				
 				.icon {
 					width: 40px;
-				    height: 40px;
-				    display: inline-block;
-				    background-image: url("../images/icon-back.png");
+					height: 40px;
+					display: inline-block;
+					background-image: url("../images/icon-back.png");
 					background-repeat: no-repeat;
 					background-position: 22px 24px;
 					background-size: 10px 17px;
-				    padding-left: 8px;
-				    padding-top: 10px;
+					padding-left: 8px;
+					padding-top: 10px;
 				}
 				
 				label {
-				    font-size: 16px;
-				    color: #000000;
+					font-size: 16px;
+					color: #000000;
 					vertical-align: 12px;
 					margin-left: -8px;
 				}
@@ -461,20 +472,20 @@ html, body {
 					margin: -5px 0 0 0;
 				    
 					font-weight: bold;
-				    font-size: 28px;
+					font-size: 28px;
 					color: #000000;
 					overflow-wrap: break-word;
 					margin-top: 10px;
 
 					.rating {
-					    float: right;
-					    font-size: 16px;
+						float: right;
+						font-size: 16px;
 						
-					    font-weight: bold;
-					    background-color: lightgrey;
-					    border-radius: 30px;
-					    padding: 3px 10px;
-					    color: white;
+						font-weight: bold;
+						background-color: lightgrey;
+						border-radius: 30px;
+						padding: 3px 10px;
+						color: white;
 						margin-left: 10px;
 						margin-right: -5px;
 						margin-bottom: 5px;
@@ -486,7 +497,7 @@ html, body {
 					padding: 0;
 					margin: 10px 0 0 0;				    
 					font-weight: normal;
-				    font-size: 20px;
+					font-size: 20px;
 					color: rgba(0, 0, 0, 0.5);
 					width: 100%;
 					white-space: nowrap;
@@ -514,7 +525,7 @@ html, body {
 					
 					h3 {
 						font-weight: normal;
-					    font-size: 16px;
+						font-size: 16px;
 						color: rgba(0, 0, 0, 0.6);
 						display: block;
 						width: 100%;
@@ -540,7 +551,7 @@ html, body {
 
 						.show-more {
 							font-weight: bold;
-						    cursor: pointer;
+							cursor: pointer;
 						}
 						
 						a.map {
@@ -588,17 +599,17 @@ html, body {
 					}
 			
 					.feature {
-					    outline: none;
+						outline: none;
 						background: #71CE0B;
 						color: #FFFFFF;
-					    font-size: 17px;
-					    margin-right: 5px;
+						font-size: 17px;
+						margin-right: 5px;
 						margin-bottom: 10px;
-					    padding: 10px 20px 10px 15px;
-					    border-radius: 50px;
-					    -webkit-appearance: none;
-					    text-align: left;
-					    width: fit-content;
+						padding: 10px 20px 10px 15px;
+						border-radius: 50px;
+						-webkit-appearance: none;
+						text-align: left;
+						width: fit-content;
 						font-weight: 500;
 						letter-spacing: -0.5px;
 						display: inline-block;
@@ -616,9 +627,9 @@ html, body {
 							width: 20px;
 							height: 20px;
 							background-repeat: no-repeat;
-						    background-size: 100%;
-						    vertical-align: -4px;
-						    margin-right: 4px;
+							background-size: 100%;
+							vertical-align: -4px;
+							margin-right: 4px;
 							margin-left: -4px;
 							background-image: url("../images/checkbox-filled.png");
 							opacity: 1;
@@ -634,13 +645,13 @@ html, body {
 	}
 
 	.submit-button-wrapper {
-	    position: fixed;
-	    bottom: -300px;
-	    width: 100%;
-	    height: 300px + 44px + 30px;
-	    background: #FFFFFF;
+		position: fixed;
+		bottom: -300px;
+		width: 100%;
+		height: 300px + 44px + 30px;
+		background: #FFFFFF;
 		z-index: 9999;
-	    box-shadow: 0 -1px 0 0 #EAEAEA;
+		box-shadow: 0 -1px 0 0 #EAEAEA;
 		transition: bottom 0.5s;
 		
 		&.keyboard-active {
@@ -650,23 +661,23 @@ html, body {
 		input[type="submit"] {
 			position: absolute;
 			height: 44px;
-		    background: #2A87EC;
-		    width: calc(~"100% - 40px");
-		    outline: none;
+			background: #2A87EC;
+			width: calc(~"100% - 40px");
+			outline: none;
 		    
-		    font-size: 20px;
-		    margin-top: 15px;
-		    margin-left: 20px;
-		    border-radius: 50px;
-		    background-size: 20px;
-		    background-repeat: no-repeat;
-		    background-position: 17px 14px;
+			font-size: 20px;
+			margin-top: 15px;
+			margin-left: 20px;
+			border-radius: 50px;
+			background-size: 20px;
+			background-repeat: no-repeat;
+			background-position: 17px 14px;
 			padding: 0;
-		    box-sizing: content-box;
-		    border: none;
-		    text-align: center;
-		    font-weight: bold;
-		    color: #FFFFFF;
+			box-sizing: content-box;
+			border: none;
+			text-align: center;
+			font-weight: bold;
+			color: #FFFFFF;
 		
 			&:active, &.active {
 				filter: brightness(60%);
@@ -678,18 +689,18 @@ html, body {
 
 	button {
 		height: 44px;
-	    background: #2A87EC;
-	    outline: none;
-	    cursor: pointer;
-	    font-size: 20px;
-	    margin-top: 15px;
-	    border-radius: 50px;
+		background: #2A87EC;
+		outline: none;
+		cursor: pointer;
+		font-size: 20px;
+		margin-top: 15px;
+		border-radius: 50px;
 		padding: 0;
-	    box-sizing: content-box;
-	    border: none;
-	    text-align: center;
-	    font-weight: bold;
-	    color: #FFFFFF;
+		box-sizing: content-box;
+		border: none;
+		text-align: center;
+		font-weight: bold;
+		color: #FFFFFF;
 		line-height: 44px;
 
 		&:active, &.active {
@@ -701,7 +712,7 @@ html, body {
 		}
 		
 		&.half-width {
-		    width: calc(~"50% - 5px");
+			width: calc(~"50% - 5px");
 			
 			&.right {
 				margin-left: 10px;
@@ -709,9 +720,9 @@ html, body {
 		}
 		
 		&.small {
-		    font-size: 16px;
-		    height: 36px;
-		    line-height: 36px;
+			font-size: 16px;
+			height: 36px;
+			line-height: 36px;
 		}
 	}
 	
@@ -720,7 +731,7 @@ html, body {
 		h3 {
 		    
 			font-weight: normal;
-		    font-size: 15px;
+			font-size: 15px;
 			margin: 10px 0 0 0;
 	
 			&:first-child {
@@ -732,9 +743,9 @@ html, body {
 				width: 20px;
 				height: 20px;
 				background-repeat: no-repeat;
-			    background-size: 100%;
-			    vertical-align: -5px;
-			    margin-right: 7px;
+				background-size: 100%;
+				vertical-align: -5px;
+				margin-right: 7px;
 			}
 
 			.number {
@@ -792,12 +803,12 @@ html, body {
 		color: #000000;
 	
 		.program {
-		    background: #FFFFFF;
-		    border: 1px solid #E6E6E6;
-		    width: calc(~"100% - 82px");
-		    padding: 20px;
-		    margin: 20px;
-		    border-radius: 5px;
+			background: #FFFFFF;
+			border: 1px solid #E6E6E6;
+			width: calc(~"100% - 82px");
+			padding: 20px;
+			margin: 20px;
+			border-radius: 5px;
 			cursor: pointer;
 			overflow: hidden;
 		
@@ -805,19 +816,19 @@ html, body {
 				padding: 0;
 				margin: -5px 0 0 0;
 				font-weight: bold;
-			    font-size: 24px;
+				font-size: 24px;
 				color: #000000;
 				overflow-wrap: break-word;
 				word-wrap: break-word;
 
 				.rating {
-				    float: right;
-				    font-size: 16px;
-				    font-weight: bold;
-				    background-color: lightgrey;
-				    border-radius: 30px;
-				    padding: 3px 10px;
-				    color: white;
+					float: right;
+					font-size: 16px;
+					font-weight: bold;
+					background-color: lightgrey;
+					border-radius: 30px;
+					padding: 3px 10px;
+					color: white;
 					margin-left: 10px;
 					margin-right: -5px;
 					margin-bottom: 5px;
@@ -828,7 +839,7 @@ html, body {
 				padding: 0;
 				margin: 10px 0 0 0;
 				font-weight: normal;
-			    font-size: 20px;
+				font-size: 20px;
 				color: rgba(0, 0, 0, 0.5);
 				width: 100%;
 				white-space: nowrap;
@@ -852,7 +863,7 @@ html, body {
 			
 			&.special {
 				background: #2A87EC;
-			    border: 1px solid #2A87EC;
+				border: 1px solid #2A87EC;
 				color: #FFFFFF;
 				
 				h1 {
@@ -861,16 +872,16 @@ html, body {
 				}
 				
 				.close {
-				    width: 40px;
-				    height: 40px;
-				    display: inline-block;
-				    background-image: url("../images/icon-x.png");
-				    background-repeat: no-repeat;
-				    background-size: 50%;
-				    float: right;
-				    margin-right: -22px;
-				    margin-top: -3px;
-				    opacity: 0.7;
+					width: 40px;
+					height: 40px;
+					display: inline-block;
+					background-image: url("../images/icon-x.png");
+					background-repeat: no-repeat;
+					background-size: 50%;
+					float: right;
+					margin-right: -22px;
+					margin-top: -3px;
+					opacity: 0.7;
 					
 					&:active {
 						opacity: 1;
