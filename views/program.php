@@ -49,7 +49,7 @@
 		<script src="../resources/js/program.js?<?php echo rand(0, 99999); ?>"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
-	<body ontouchstart="" class="program-detail-page">
+  <body ontouchstart="" class="program-detail-page" data-program-id="<?php echo $program["program_id"]; ?>">
 
 		<div id="wrapper" class="program-detail-page">
 			<a href="javascript: window.history.back();" class="back">
@@ -75,7 +75,7 @@
 				
 				<?php if($research_prompt_position == 1) { include("../views/shared/research-prompt.php"); } ?>
 				
-				<section>
+				<section class="contact-info">
 					<h3>Contact Info</h3>
 					<div class="section-content">
 						<p>

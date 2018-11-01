@@ -54,6 +54,7 @@ $(document).ready(function() {
 		if($("#wrapper").hasClass("results")) {
 			update_results(filter_options);
 		}
+    track_apply_filters();
 	});
 	
 	$("#wrapper.results .header-wrapper form input").on("keyup click", update_results);
