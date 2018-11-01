@@ -1,5 +1,5 @@
 <?php if(!isset($_COOKIE["research-prompt-closed"]) || isset($_GET["force_research_prompt"])) { ?>
-	<a target="_blank" href="http://docs.google.com/#GOOGLE_FORM_LINK_HERE" class="program-link-wrapper" id="research-prompt">
+	<a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdZXAQdsNTtLYRGLd2VS5W-74i0tDeedgj19pRxWq9IiAha1w/viewform" class="program-link-wrapper" id="research-prompt">
 		<div class="program special">
 			<div class="close"></div>
 			<h1>Paid Research Study</h1>

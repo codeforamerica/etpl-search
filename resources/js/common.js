@@ -58,6 +58,7 @@ $(document).ready(function() {
 	});
 	
 	$("#research-prompt").click(function() {
+		$(this).hide();
 		// if link is clicked, don't show prompt again for 7 days
 		set_cookie("research-prompt-closed", 1, 7);
 	});
