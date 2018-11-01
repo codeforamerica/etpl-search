@@ -10,7 +10,6 @@ $(document).ready(function() {
       $(this).parent(".checkbox-wrapper").addClass("checked");
       $(this).attr("checked", "checked").addClass("checked");
     }
-    track_apply_filter($(this).parent(".checkbox-wrapper"));
   });
 
   $(".checkbox-wrapper").on("touchstart", function(e) {
@@ -27,7 +26,6 @@ $(document).ready(function() {
       $(this).addClass("checked");
       $(this).children("input[type='checkbox']").attr("checked", "checked")
     }
-    track_apply_filter($(this));
   });
 
   $("input[type='submit']").on("touchstart touchend", function(e) {
