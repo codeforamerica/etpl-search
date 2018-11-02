@@ -5,14 +5,14 @@
 		strpos($_SERVER["REMOTE_ADDR"], '192.168.1') !== false
 	) {
 		$config = Array(
-			"show-suggestions" => 1,
+			"show-search-suggestions" => 1,
 			"show-data" => 1,
 			"show-ratings" => 1,
-			"show-research-prompt" => 0
+			"show-research-prompt" => 1
 		);
 	} else {
 		$config = Array(
-			"show-suggestions" => getenv("SHOW_SUGGESTIONS"),
+			"show-search-suggestions" => getenv("SHOW_SEARCH_SUGGESTIONS"),
 			"show-data" => getenv("SHOW_DATA"),
 			"show-ratings" => getenv("SHOW_RATINGS"),
 			"show-research-prompt" => getenv("SHOW_RESEARCH_PROMPT")

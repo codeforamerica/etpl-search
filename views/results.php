@@ -75,16 +75,14 @@
 	
 	krsort($program_list);
 	$list_index = 0;
-	$research_prompt_position = rand(4, 8);
+	$research_prompt_position = rand(3, 6);
 	
 	foreach($program_list as $sort => $program) {
 		$list_index++;
 ?>
 		<?php
-			if($config["show-research-prompt"] == 1) {
-				if($list_index == $research_prompt_position) {
-					include("../views/shared/research-prompt.php");
-				}
+			if($list_index == $research_prompt_position) {
+				include("../views/shared/research-prompt.php");
 			}
 		?>
 		
