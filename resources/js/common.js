@@ -96,6 +96,20 @@ function set_cookie(name, value, days) {
     document.cookie = name+"="+value+expires+"; path=/";
 }
 
+function set_scroll_container_width(item, container) {
+	setTimeout(function() {
+		var container_width = 0;
+
+		$(item).each(function() {
+			container_width += $(this).outerWidth()+parseInt($(this).css("margin-right"));
+			container_width = Math.round(container_width);
+		});
+
+		container_width = container_width + (parseInt($(container).css("padding-left")));
+		$(container).width(container_width);
+	}, 10);
+}
+
 $(document).ready(function() {
   preload_images([
     "../resources/images/checkbox-filled.png",

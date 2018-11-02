@@ -68,14 +68,5 @@ $(document).ready(function() {
 });
 
 $(window).on("load", function() {
-	setTimeout(function() {
-		var filters_list_width = 0;
-
-		$(".checkbox-wrapper").each(function() {
-			filters_list_width += $(this).outerWidth()+parseInt($(this).css("margin-right"));
-			filters_list_width = Math.round(filters_list_width);
-		});
-
-		$("#checkboxes-container").width(filters_list_width + (parseInt($("#checkboxes-container").css("padding-left"))));
-	}, 10);
+	set_scroll_container_width(".checkbox-wrapper", "#checkboxes-container");
 });
