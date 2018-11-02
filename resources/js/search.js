@@ -59,6 +59,9 @@ $(document).ready(function() {
 		}
 	});
 	
+});
+
+$(window).on("load", function() {
 	if($(window).width() < 667) {
 		setTimeout(function() {
 			var suggestion_list_width = 0;
@@ -70,6 +73,8 @@ $(document).ready(function() {
 
 			suggestion_list_width_total = suggestion_list_width + (parseInt($("#suggestions-container").css("padding-left")));
 			$("#suggestions-container").width(suggestion_list_width_total);
+	
+			console.log(suggestion_list_width_total);
 		}, 10);
 	}
 });
