@@ -1,3 +1,38 @@
+<?php
+	$suggestions = Array(
+		Array(
+			"icon" => 6,
+			"label" => "Computer",
+			"search-terms" => "computer software data it technology",
+		),
+		Array(
+			"icon" => 1,
+			"label" => "Health Care",
+			"search-terms" => "medical health healthcare nursing nurse dental",
+		),
+		Array(
+			"icon" => 2,
+			"label" => "Sales",
+			"search-terms" => "sales marketing",
+		),
+		Array(
+			"icon" => 5,
+			"label" => "Business",
+			"search-terms" => "business management international entrepreneurship",
+		),
+		Array(
+			"icon" => 11,
+			"label" => "Education",
+			"search-terms" => "education teaching",
+		),
+		Array(
+			"icon" => 8,
+			"label" => "Science/Math",
+			"search-terms" => "science math",
+		)
+	);
+?>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -20,8 +55,18 @@
       <h2>This is a list of job training programs that are eligible to receive publically funded tuition assistance.</h2>
       <form method="GET" action="results-wrapper.php">
         <input type="text" class="location" value="New Jersey" disabled>
-        <input type="search" class="search" placeholder="Type a skill area..." name="query" autocomplete="off">
+        <input type="search" class="search" placeholder="Type or pick a skill..." name="query" autocomplete="off">
         <input type="submit" value="" class="circle">
+		<div id="suggestions-wrapper">
+			<div id="suggestions-container">
+				<?php foreach($suggestions as $suggestion_key => $suggestion) { ?>
+					<div data-search-terms="<?php echo str_replace(" ", "/", $suggestion["search-terms"]); ?>" class="suggestion-wrapper">
+						<div class="icon" style="background-position-y: -<?php echo $suggestion["icon"]*32; ?>px;"></div>
+						<label><?php echo $suggestion["label"]; ?></label>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
         <h3>Filters</h2>
         <div id="checkboxes">
           <?php include("shared/filters.php"); ?>

@@ -16,7 +16,7 @@
       <div class="header-wrapper">
         <form>
           <a href="search.php" class="back"></a>
-          <input type="search" class="search" placeholder="Type a skill area..." name="query" autocomplete="off" value="<?php echo $_GET['query']; ?>">
+          <input type="search" class="search" placeholder="Type a skill..." name="query" autocomplete="off" value="<?php echo $_GET['query']; ?>">
           <div id="checkboxes-wrapper">
             <div id="checkboxes-scroll-wrapper">
               <div id="checkboxes-container">

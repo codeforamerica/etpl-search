@@ -3,16 +3,48 @@
 	include("../functions/generate-rating.php");
 	
 	if($_GET["query"]) {
+		$query = $_GET["query"];
+		
 		$additional_query .= "WHERE
-			(program_name LIKE '%".mysqli_real_escape_string($db, $_GET["query"])."%' OR
-			provider_name LIKE '%".mysqli_real_escape_string($db, $_GET["query"])."%')
-		";
+			(program_name LIKE '%".mysqli_real_escape_string($db, $query)."%'";
+		
+		$query_words = explode("/", $query);
+		if(count($query_words) > 1) {
+			foreach($query_words as $query_word) {
+				if($query_word) {
+					$additional_query .= " OR
+					program_name LIKE '%".mysqli_real_escape_string($db, $query_word)."%'";
+				}
+			}
+		}
+
+		$additional_query .= ")";
 	} else {
 		$additional_query .= "WHERE program_name LIKE '%'";
+	}
+		
+	if($_GET["attributes_in_demand"] == "on") {
+		$additional_query .= " AND attributes_in_demand = 1";
 	}
 	
 	if($_GET["features_child_care_offered_on_site"] == "on") {
 		$additional_query .= " AND features_child_care_offered_on_site = 1";
+	}
+	
+	if($_GET["features_distance_learning_services_provider"] == "on") {
+		$additional_query .= " AND features_distance_learning_services_provider = 1";
+	}
+	
+	if($_GET["features_spanish_spoken_by_staff"] == "on") {
+		$additional_query .= " AND features_spanish_spoken_by_staff = 1";
+	}
+	
+	if($_GET["features_other_languages_spoken_by_staff"] == "on") {
+		$additional_query .= " AND features_other_languages_spoken_by_staff = 1";
+	}
+	
+	if($_GET["features_wia_eligible"] == "on") {
+		$additional_query .= " AND features_wia_eligible = 1";
 	}
 	
 	if($_GET["features_wheelchair_accessible"] == "on") {
@@ -21,10 +53,6 @@
 	
 	if($_GET["features_career_counseling_available"] == "on") {
 		$additional_query .= " AND features_career_counseling_available = 1";
-	}
-	
-	if($_GET["info_admission_pre_requisites"] == "on") {
-		$additional_query .= " AND info_admission_pre_requisites = 'none'";
 	}
 
 	$query = "SELECT * FROM programs ".$additional_query." LIMIT 250";

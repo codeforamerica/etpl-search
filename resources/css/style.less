@@ -145,7 +145,8 @@ html, body {
 				text-indent: 40px;
 				background-size: 20px;
 				background-repeat: no-repeat;
-				background-position: 17px 14px;
+				background-position: 17px 13px;
+				line-height: 22px;
 				-webkit-appearance: none;
 				-webkit-tap-highlight-color: rgba(0,0,0,0);
 				box-sizing: content-box;
@@ -195,6 +196,71 @@ html, body {
 				opacity: 0;
 			}
 			
+			#suggestions-wrapper {
+				margin-top: 15px;	
+				overflow-y: scroll;
+				-webkit-overflow-scrolling: touch;
+				font-size: 0;
+				
+				@media @mobile {
+					height: 50px;
+				}
+			
+				&::-webkit-scrollbar { display: none; }
+				
+				#suggestions-container {
+					padding-left: 20px;
+
+					.suggestion-wrapper {
+						background: #F5F5F5;
+						outline: none;    
+						font-size: 17px;
+						margin-right: 5px;
+						margin-bottom: 10px;
+						padding: 10px 15px;
+						border-radius: 50px;
+						-webkit-appearance: none;
+						text-align: center;
+						width: fit-content;
+						font-weight: 500;
+						letter-spacing: -0.5px;
+						display: inline-block;
+			
+						&:active {
+							filter: brightness(90%);
+						}
+						
+						&:hover {
+							text-decoration: none;
+						}
+				
+						&:last-child {
+							margin-bottom: 0px;	
+							margin-right: 0px;
+						}
+			
+						input {
+							display: none;
+						}
+			
+						.icon {
+							display: inline-block;
+							width: 32px;
+							height: 32px;
+							background-repeat: no-repeat;
+							background-size: 100%;
+						    vertical-align: -6px;
+						    margin-right: -2px;
+						    margin-left: -4px;
+						    margin-top: -4px;
+						    margin-bottom: -4px;
+							background-image: url("../images/emojis.png");
+						}
+					}
+				}
+				
+			}
+			
 			#checkboxes {
 				margin-left: 20px;
 				margin-top: 15px;
@@ -203,11 +269,10 @@ html, body {
 				.checkbox-wrapper {
 					background: #F5F5F5;
 					outline: none;
-				    
 					font-size: 17px;
 					margin-right: 5px;
 					margin-bottom: 10px;
-					padding: 10px 20px 10px 15px;
+					padding: 10px 15px;
 					border-radius: 50px;
 					-webkit-appearance: none;
 					text-align: center;
@@ -222,6 +287,7 @@ html, body {
 					
 					&:last-child {
 						margin-bottom: 0px;	
+						margin-right: 0px;
 					}
 				
 					input {
@@ -244,7 +310,6 @@ html, body {
 					label {
 						margin-left: 4px;
 					}
-				
 				
 					&.checked {
 						background: #71CE0B;
@@ -331,10 +396,11 @@ html, body {
 					#checkboxes-wrapper {
 						height: 37px;
 						overflow: hidden;
-						margin-top: 10px;
+						margin-top: 11px;
 						margin-bottom: 7px;
 						
 						#checkboxes-scroll-wrapper {
+							font-size: 0;
 							overflow-y: scroll;
 							height: 50px;
 							-webkit-overflow-scrolling: touch;
@@ -359,6 +425,11 @@ html, body {
 				
 									&:active {
 										filter: brightness(90%);
+									}
+									
+									&:last-child {
+										margin-bottom: 0px;	
+										margin-right: 0px;
 									}
 				
 									input {

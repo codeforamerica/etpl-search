@@ -15,6 +15,15 @@ function update_results(filter_options) {
 
 $(document).ready(function() { 
 	
+	var filters_list_width = 0;
+	
+	$(".checkbox-wrapper").each(function() {
+		filters_list_width += $(this).outerWidth()+parseInt($(this).css("margin-right"));
+		filters_list_width = Math.round(filters_list_width);
+	});
+
+	$("#checkboxes-container").width(filters_list_width + (parseInt($("#checkboxes-container").css("padding-left"))));
+	
 	var search_query = location.search.substring(1);
 	if(search_query) {
 		var json_search_query = JSON.parse('{"' + decodeURI(search_query).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
