@@ -10,4 +10,4 @@ Every state provides a list of training programs that a job seeker can get help 
 
 For people struggling to escape the cycle of low-wage work, subsidized training or paid apprenticeships can dramatically increase opportunities for higher-wage work.
 
-States publish different amounts of data about programs on their ETPL. Some include employment rates, wages, and long-term wage growth, while others provide just titles and descriptions. For example, the New Jersey ETPL exposes a lot of data about each program. This project is an experiment to increase mobile usability and data presentation of the New Jersey ETPL.
+States publish different amounts of data about programs on their ETPL. Some include employment rates, wages, and long-term wage growth, while others provide just titles and descriptions. For example, the [New Jersey ETPL](http://www.njtrainingsystems.org/) exposes a lot of data about each program. This project is an experiment to increase mobile usability and data presentation of the New Jersey ETPL.
