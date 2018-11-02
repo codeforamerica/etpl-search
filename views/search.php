@@ -63,7 +63,7 @@
 		<div id="suggestions-wrapper">
 			<div id="suggestions-container">
 				<?php foreach($suggestions as $suggestion_key => $suggestion) { ?>
-					<div data-search-terms="<?php echo str_replace(" ", "/", $suggestion["search-terms"]); ?>" class="suggestion-wrapper">
+					<div id="<?php echo $suggestion["label"]; ?>" data-search-terms="<?php echo str_replace(" ", "/", $suggestion["search-terms"]); ?>" class="suggestion-wrapper">
 						<div class="icon" style="background-position-y: -<?php echo $suggestion["icon"]*32; ?>px;"></div>
 						<label><?php echo $suggestion["label"]; ?></label>
 					</div>

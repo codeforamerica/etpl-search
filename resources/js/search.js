@@ -9,6 +9,8 @@ $(document).ready(function() {
 		});
 
 		$("#suggestions-container").width(suggestion_list_width + (parseInt($("#suggestions-container").css("padding-left"))));
+	
+		console.log(suggestion_list_width + (parseInt($("#suggestions-container").css("padding-left"))));
 	}
 
 	$(".suggestion-wrapper").on("click", function(e) {
