@@ -1,6 +1,6 @@
 # Find the Best Training
 
-## Mobile website to help job seekers find high-quality training that is eligible for publicly-funded tuition assistance.
+## Mobile-optimized site to help job seekers find high-quality training that is eligible for publicly-funded tuition assistance.
 
 http://findtraining.org
 
