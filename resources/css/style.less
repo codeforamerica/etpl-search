@@ -73,6 +73,7 @@ html, body {
 			
 			@media @desktop {
 				margin-top: 100px;
+				height: calc(~"100% - 100px");
 				.wrapper-desktop-styling();
 			}
 			
@@ -212,7 +213,7 @@ html, body {
 					padding-left: 20px;
 
 					@media @mobile {
-						min-width: 200%;
+						width: 200%; // this gets overwritten by javascript later
 					}
 					
 					.suggestion-wrapper {
@@ -415,7 +416,7 @@ html, body {
 								padding-left: 20px;
 
 								@media @mobile {
-									min-width: 200%;
+									width: 1000%; // this gets overwritten by javascript later
 								}
 								
 								.checkbox-wrapper {

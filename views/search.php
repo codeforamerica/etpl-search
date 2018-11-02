@@ -54,7 +54,7 @@
         <div id="people"></div>
       </div>
       <h1>Find the best training for your next job.</h1>
-      <h2>This is a list of job training programs that are eligible to receive publically funded tuition assistance.</h2>
+      <h2>Choose from these job training programs that are eligible to receive publically funded tuition assistance.</h2>
       <form method="GET" action="results-wrapper.php">
         <input type="text" class="location" value="New Jersey" disabled>
         <input type="search" class="search" placeholder="Type or pick a skill..." name="query" autocomplete="off">
