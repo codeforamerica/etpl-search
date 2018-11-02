@@ -1,4 +1,6 @@
 <?php
+	include("../config.php");
+
 	$suggestions = Array(
 		Array(
 			"icon" => 6,
@@ -57,6 +59,7 @@
         <input type="text" class="location" value="New Jersey" disabled>
         <input type="search" class="search" placeholder="Type or pick a skill..." name="query" autocomplete="off">
         <input type="submit" value="" class="circle">
+		<?php if($config["show-suggestions"] == 1) { ?>
 		<div id="suggestions-wrapper">
 			<div id="suggestions-container">
 				<?php foreach($suggestions as $suggestion_key => $suggestion) { ?>
@@ -67,6 +70,7 @@
 				<?php } ?>
 			</div>
 		</div>
+		<?php } ?>
         <h3>Filters</h2>
         <div id="checkboxes">
           <?php include("shared/filters.php"); ?>

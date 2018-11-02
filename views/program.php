@@ -1,4 +1,5 @@
 <?php
+	include("../config.php");
 	include("../helpers/db-config.php");
 	include("../functions/generate-rating.php");
 
@@ -57,11 +58,13 @@
 				<label>all results</label>
 			</a>
 			<div id="content">
-				<h1><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php echo $program["program_name"];?></h1>
+				<h1><?php if($config["show-ratings"] == 1) { ?><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php } ?><?php echo $program["program_name"];?></h1>
 				<h2><a target="_blank" href="<?php echo $program["provider_website"]; ?>"><?php echo $program["provider_name"]; ?></a></h2>
+				<?php if($config["show-data"] == 1) { ?>
 				<div class="data">
 					<?php include("shared/program-data.php"); ?>
 				</div>
+				<?php } ?>
 				
 				<?php if($research_prompt_position == 0) { include("../views/shared/research-prompt.php"); } ?>
 				
