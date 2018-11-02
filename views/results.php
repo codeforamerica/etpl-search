@@ -81,8 +81,10 @@
 		$list_index++;
 ?>
 		<?php
-			if($list_index == $research_prompt_position) {
-				include("../views/shared/research-prompt.php");
+			if($config["show-research-prompt"] == 1) {
+				if($list_index == $research_prompt_position) {
+					include("../views/shared/research-prompt.php");
+				}
 			}
 		?>
 		

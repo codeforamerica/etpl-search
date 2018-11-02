@@ -35,7 +35,9 @@
 	if(isset($_GET["force_research_prompt"])) {
 		$research_prompt_position = $_GET["force_research_prompt"];
 	} else {
-		$research_prompt_position = rand(0, 15);
+		if($config["show-research-prompt"] == 1) {
+	  		$research_prompt_position = rand(0, 15);
+		}
 	}
 ?>
 <!DOCTYPE HTML>

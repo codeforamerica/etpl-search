@@ -7,13 +7,15 @@
 		$config = Array(
 			"show-suggestions" => 1,
 			"show-data" => 1,
-			"show-ratings" => 1
+			"show-ratings" => 1,
+			"show-research-prompt" => 0
 		);
 	} else {
 		$config = Array(
 			"show-suggestions" => getenv("SHOW_SUGGESTIONS"),
 			"show-data" => getenv("SHOW_DATA"),
-			"show-ratings" => getenv("SHOW_RATINGS")
+			"show-ratings" => getenv("SHOW_RATINGS"),
+			"show-research-prompt" => getenv("SHOW_RESEARCH_PROMPT")
 		);
 	}
 ?>

@@ -211,6 +211,10 @@ html, body {
 				#suggestions-container {
 					padding-left: 20px;
 
+					@media @mobile {
+						min-width: 200%;
+					}
+					
 					.suggestion-wrapper {
 						background: #F5F5F5;
 						outline: none;    
@@ -408,9 +412,12 @@ html, body {
 							&::-webkit-scrollbar { display: none; }
 						
 							#checkboxes-container {
-								width: 1610px;
 								padding-left: 20px;
-							
+
+								@media @mobile {
+									min-width: 200%;
+								}
+								
 								.checkbox-wrapper {
 									background: #F5F5F5;
 									outline: none;
