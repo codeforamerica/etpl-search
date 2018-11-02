@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	if($(window).width() < 667) {
-		var suggestion_list_width = 0;
+		var suggestion_list_width;
 	
 		$(".suggestion-wrapper").each(function() {
 			suggestion_list_width += $(this).outerWidth()+parseInt($(this).css("margin-right"));
