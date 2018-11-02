@@ -199,9 +199,12 @@ html, body {
 			}
 			
 			#suggestions-wrapper {
-				height: 50px;
 				overflow: hidden;
 				margin-top: 10px;
+				
+				@media @mobile {
+					height: 50px;
+				}
 			
 				#suggestions-scroll-wrapper {
 					overflow-y: scroll;
