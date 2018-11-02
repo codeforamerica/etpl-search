@@ -59,7 +59,7 @@
         <input type="text" class="location" value="New Jersey" disabled>
         <input type="search" class="search" placeholder="Type or pick a skill..." name="query" autocomplete="off">
         <input type="submit" value="" class="circle">
-		<?php if($config["show-search-suggestions"] == true) { ?>
+		<?php if($config["show-search-suggestions"] == 1) { ?>
 		<div id="suggestions-wrapper">
 			<div id="suggestions-container">
 				<?php foreach($suggestions as $suggestion_key => $suggestion) { ?>

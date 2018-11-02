@@ -1,4 +1,4 @@
-<?php if($config["show-research-prompt"] == true) { ?>
+<?php if($config["show-research-prompt"] == 1) { ?>
 
 	<?php if(!isset($_COOKIE["research-prompt-closed"]) || isset($_GET["force_research_prompt"])) { ?>
 	  <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdZXAQdsNTtLYRGLd2VS5W-74i0tDeedgj19pRxWq9IiAha1w/viewform" class="program-link-wrapper" id="research-prompt" data-research-prompt-position="<?php echo $research_prompt_position; ?>">
