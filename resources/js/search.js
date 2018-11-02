@@ -8,7 +8,7 @@ $(document).ready(function() {
 	      label: suggestion_label,
 	    });
 		
-        $('form').append('<input type="hidden" name="query" value="'+search_terms+'" />').submit();
+        $('form').append('<input type="hidden" name="query" value="'+search_terms+'" id="query_from_suggestion"/>').submit();
 	});
 	
 	$("input[type='checkbox']").on("touchstart click", function(e) {
@@ -42,6 +42,7 @@ $(document).ready(function() {
 	$("input[type='submit']").on("touchstart touchend", function(e) {
 		$(this).addClass("active");
 	}).on("click touchend", function(e) {
+		$("#query_from_suggestion").remove();
 		$("form").submit();
 		$(this).removeClass("active");
 		if((navigator.platform.indexOf("iPhone") != -1)) {
