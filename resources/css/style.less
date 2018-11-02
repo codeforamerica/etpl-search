@@ -129,7 +129,7 @@ html, body {
 			}
 			
 			form {
-				margin-top: 10px;
+				margin-top: 20px;
 			}
 			
 			input[type="text"], input[type="search"] {
@@ -195,81 +195,87 @@ html, body {
 			
 			input[type="submit"].fake {
 				opacity: 0;
+				font-size: 0;
 			}
 			
 			#suggestions-wrapper {
-				margin-top: 15px;	
-				overflow-y: scroll;
-				-webkit-overflow-scrolling: touch;
-				font-size: 0;
-				
-				@media @mobile {
-					height: 50px;
-				}
+				height: 50px;
+				overflow: hidden;
+				margin-top: 10px;
 			
-				&::-webkit-scrollbar { display: none; }
+				#suggestions-scroll-wrapper {
+					overflow-y: scroll;
+					-webkit-overflow-scrolling: touch;
+					font-size: 0;
 				
-				#suggestions-container {
-					padding-left: 20px;
-
 					@media @mobile {
-						width: 200%; // this gets overwritten by javascript later
+						height: 65px;
 					}
+			
+					&::-webkit-scrollbar { display: none; }
+				
+					#suggestions-container {
+						padding-left: 20px;
+
+						@media @mobile {
+							width: 300%; // this gets overwritten by javascript later
+						}
 					
-					.suggestion-wrapper {
-						background: #F5F5F5;
-						outline: none;    
-						font-size: 17px;
-						margin-right: 5px;
-						margin-bottom: 10px;
-						padding: 10px 15px;
-						border-radius: 50px;
-						-webkit-appearance: none;
-						text-align: center;
-						width: fit-content;
-						font-weight: 500;
-						letter-spacing: -0.5px;
-						display: inline-block;
-			
-						&:active {
-							filter: brightness(90%);
-						}
-						
-						&:hover {
-							text-decoration: none;
-						}
-				
-						&:last-child {
-							margin-bottom: 0px;	
-							margin-right: 0px;
-						}
-			
-						input {
-							display: none;
-						}
-			
-						.icon {
+						.suggestion-wrapper {
+							background: #F5F5F5;
+							outline: none;    
+							font-size: 17px;
+							margin-right: 5px;
+							margin-bottom: 10px;
+							padding: 10px 15px;
+							border-radius: 50px;
+							-webkit-appearance: none;
+							text-align: center;
+							width: fit-content;
+							font-weight: 500;
+							letter-spacing: -0.5px;
 							display: inline-block;
-							width: 32px;
-							height: 32px;
-							background-repeat: no-repeat;
-							background-size: 100%;
-						    vertical-align: -6px;
-						    margin-right: -2px;
-						    margin-left: -4px;
-						    margin-top: -4px;
-						    margin-bottom: -4px;
-							background-image: url("../images/emojis.png");
+			
+							&:active {
+								filter: brightness(90%);
+							}
+						
+							&:hover {
+								text-decoration: none;
+							}
+				
+							&:last-child {
+								margin-bottom: 0px;	
+								margin-right: 0px;
+							}
+			
+							input {
+								display: none;
+							}
+			
+							.icon {
+								display: inline-block;
+								width: 32px;
+								height: 32px;
+								background-repeat: no-repeat;
+								background-size: 100%;
+							    vertical-align: -6px;
+							    margin-right: -2px;
+							    margin-left: -4px;
+							    margin-top: -4px;
+							    margin-bottom: -4px;
+								background-image: url("../images/emojis.png");
+							}
 						}
 					}
-				}
 				
+				}
 			}
 			
 			#checkboxes {
 				margin-left: 20px;
 				margin-top: 15px;
-				// padding-bottom: 80px;
+				padding-bottom: 2px;
 			
 				.checkbox-wrapper {
 					background: #F5F5F5;

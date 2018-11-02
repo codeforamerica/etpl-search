@@ -54,20 +54,22 @@
         <div id="people"></div>
       </div>
       <h1>Find the best training for your next job.</h1>
-      <h2>Choose from these job training programs that are eligible to receive publically funded tuition assistance.</h2>
+      <h2>Compare training programs that are eligible for publically-funded tuition assistance.</h2>
       <form method="GET" action="results-wrapper.php">
         <input type="text" class="location" value="New Jersey" disabled>
         <input type="search" class="search" placeholder="Type or pick a skill..." name="query" autocomplete="off">
         <input type="submit" value="" class="circle">
 		<?php if($config["show-search-suggestions"] == 1) { ?>
 		<div id="suggestions-wrapper">
-			<div id="suggestions-container">
-				<?php foreach($suggestions as $suggestion_key => $suggestion) { ?>
-					<div id="<?php echo $suggestion["label"]; ?>" data-search-terms="<?php echo str_replace(" ", "/", $suggestion["search-terms"]); ?>" class="suggestion-wrapper">
-						<div class="icon" style="background-position-y: -<?php echo $suggestion["icon"]*32; ?>px;"></div>
-						<label><?php echo $suggestion["label"]; ?></label>
-					</div>
-				<?php } ?>
+			<div id="suggestions-scroll-wrapper">
+				<div id="suggestions-container">
+					<?php foreach($suggestions as $suggestion_key => $suggestion) { ?>
+						<div id="<?php echo $suggestion["label"]; ?>" data-search-terms="<?php echo str_replace(" ", "/", $suggestion["search-terms"]); ?>" class="suggestion-wrapper">
+							<div class="icon" style="background-position-y: -<?php echo $suggestion["icon"]*32; ?>px;"></div>
+							<label><?php echo $suggestion["label"]; ?></label>
+						</div>
+					<?php } ?>
+				</div>
 			</div>
 		</div>
 		<?php } ?>
