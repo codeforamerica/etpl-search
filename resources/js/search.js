@@ -58,7 +58,10 @@ $(document).ready(function() {
 			$(".submit-button-wrapper").removeClass("keyboard-active");
 		}
 	});
+	
+});
 
+$(window).load(function() {
 	if($(window).width() < 667) {
 		var suggestion_list_width = 0;
 	
@@ -72,5 +75,4 @@ $(document).ready(function() {
 	
 		console.log(suggestion_list_width_total);
 	}
-	
 });
