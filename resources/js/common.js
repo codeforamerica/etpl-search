@@ -46,6 +46,15 @@ function track_apply_filters(){
   });
 }
 
+function track_filter_added(checkbox_wrapper){
+  var label = checkbox_wrapper.find("label");
+  mixpanel.track("filter_select", {
+    filter_id: label.attr("for"),
+    filter: label.text(),
+    filter_select_location: get_path_location(),
+  });
+}
+
 function init_mixpanel_events() {
   // Page view events
   if(path_contains("search.php")) {
@@ -80,8 +89,7 @@ function init_mixpanel_events() {
     })
   });
 
-  // when filters are clicked, the tracking is triggered in results.js
-
+  // events triggered by adding filters are covered in search.js and results.js
 }
 
 function set_cookie(name, value, days) {

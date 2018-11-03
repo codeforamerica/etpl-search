@@ -31,24 +31,31 @@ $(document).ready(function() {
 	$("input[type='checkbox']").on("click", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
-		if($(this).attr("checked") == "checked") {
-			$(this).parent(".checkbox-wrapper").removeClass("checked");
-			$(this).removeAttr("checked").removeClass("checked");
+		var checkbox = $(this);
+		var wrapper = checkbox.parent(".checkbox_wrapper");
+		if(checkbox.attr("checked") === "checked") {
+			wrapper.removeClass("checked");
+			checkbox.removeAttr("checked").removeClass("checked");
 		} else {
-			$(this).parent(".checkbox-wrapper").addClass("checked");
-			$(this).attr("checked", "checked").addClass("checked");
+			wrapper.addClass("checked");
+			checkbox.attr("checked", "checked").addClass("checked");
+			track_filter_added(wrapper)
 		}	
 	});
 	
 	$(".checkbox-wrapper").on("click", function(e) {
 		e.preventDefault();
 		e.stopPropagation();
-		if($(this).children("input[type='checkbox']").attr("checked") == "checked") {
-			$(this).removeClass("checked");
-			$(this).children("input[type='checkbox']").removeAttr("checked");
+		var wrapper = $(this);
+		var checkbox = wrapper.children("input[type='checkbox']");
+
+		if(checkbox.attr("checked") === "checked") {
+			wrapper.removeClass("checked");
+			checkbox.removeAttr("checked");
 		} else {
-			$(this).addClass("checked");
-			$(this).children("input[type='checkbox']").attr("checked", "checked")
+			wrapper.addClass("checked");
+			checkbox.attr("checked", "checked");
+			track_filter_added(wrapper);
 		}
 		
 		if($("#wrapper").hasClass("results")) {
