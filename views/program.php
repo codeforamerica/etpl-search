@@ -3,10 +3,15 @@
 	include("../helpers/db-config.php");
 	include("../functions/generate-rating.php");
 
-	$query = "SELECT * FROM programs WHERE program_id = '".mysqli_real_escape_string($db, $_GET["id"])."' LIMIT 1";
-	// echo $query;
-	$programs = mysqli_query($db, $query);
+	$query = mysqli_prepare($db, "SELECT * FROM programs WHERE program_id = ? LIMIT 1");
+    mysqli_stmt_bind_param($query, "s", $_GET["id"]);
+    mysqli_stmt_execute($query);
+    mysqli_stmt_bind_result($query, $programs);
 
+  	$programs = mysqli_stmt_get_result($query);
+    mysqli_stmt_close($query);
+	mysqli_close($db);
+	
 	if(mysqli_num_rows($programs) > 0) {
 		$program = mysqli_fetch_assoc($programs);
 		
@@ -27,10 +32,8 @@
 	} else {
 		echo '<div class="no-results">Sorry, no matches...</div>';
 	}
-
-	mysqli_close($db);
 	
-	$description_limit = 350;
+	$description_character_limit = 350;
 	
 	if(isset($_GET["force_research_prompt"])) {
 		$research_prompt_position = $_GET["force_research_prompt"];
@@ -71,8 +74,8 @@
 				<section>
 					<h3>Description</h3>
 					<div class="section-content">
-						<p id="description" <?php if(strlen($program["description_short"]) > $description_limit) { echo 'class="truncated"'; } ?>><?php echo $program["description_short"]; ?></p>
-						<?php if(strlen($program["description_short"]) > $description_limit) { ?><div class="show-more" id="description">Continue Reading...</div><?php } ?>
+						<p id="description" <?php if(strlen($program["description_short"]) > $description_character_limit) { echo 'class="truncated"'; } ?>><?php echo $program["description_short"]; ?></p>
+						<?php if(strlen($program["description_short"]) > $description_character_limit) { ?><div class="show-more" id="description">Continue Reading...</div><?php } ?>
 					</div>
 				</section>
 				
