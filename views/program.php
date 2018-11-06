@@ -1,4 +1,5 @@
 <?php
+	include("shared/functions.php");
 	include("../config.php");
 	include("../helpers/db-config.php");
 	include("../functions/generate-rating.php");
@@ -46,11 +47,11 @@
 
 	<head>
 		<title>Find the Best Training</title>
-		<link rel="stylesheet/less" href="../resources/css/style.less?<?php echo rand(0, 99999); ?>">
+		<link rel="stylesheet/less" href="../resources/css/style.less<?php no_cache(); ?>">
 		<script src="../resources/js/lib/less.js"></script>
 		<script src="../resources/js/lib/jquery.js"></script>
-		<script src="../resources/js/common.js?<?php echo rand(0, 99999); ?>"></script>
-		<script src="../resources/js/program.js?<?php echo rand(0, 99999); ?>"></script>
+		<script src="../resources/js/common.js<?php no_cache(); ?>"></script>
+		<script src="../resources/js/program.js<?php no_cache(); ?>"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
   <body ontouchstart="" class="program-detail-page" data-program-id="<?php echo $program["program_id"]; ?>">

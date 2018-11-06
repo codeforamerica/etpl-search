@@ -1,13 +1,14 @@
+<?php include("shared/functions.php"); ?>
 <!DOCTYPE HTML>
 <html>
 
   <head>
     <title>Find the Best Training</title>
-    <link rel="stylesheet/less" href="../resources/css/style.less?<?php echo rand(0, 99999); ?>">
+    <link rel="stylesheet/less" href="../resources/css/style.less<?php no_cache(); ?>">
     <script src="../resources/js/lib/less.js"></script>
     <script src="../resources/js/lib/jquery.js"></script>
-    <script src="../resources/js/common.js?<?php echo rand(0, 99999); ?>"></script>
-    <script src="../resources/js/results.js?<?php echo rand(0, 99999); ?>"></script>
+    <script src="../resources/js/common.js<?php no_cache(); ?>"></script>
+    <script src="../resources/js/results.js<?php no_cache(); ?>"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body ontouchstart="" class="results">
