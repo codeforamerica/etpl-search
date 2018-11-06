@@ -15,4 +15,6 @@
 
 		$db = mysqli_connect($server, $username, $password, $database);
 	}
+	
+	mysqli_set_charset($db, "utf8")
 ?>
