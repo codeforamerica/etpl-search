@@ -75,7 +75,11 @@
 	
 	krsort($program_list);
 	$list_index = 0;
-	$research_prompt_position = rand(3, 6);
+	if(isset($_GET["force_research_prompt"])) {
+		$research_prompt_position = $_GET["force_research_prompt"];
+	} else {
+		$research_prompt_position = rand(3, 6);
+	}
 	
 	foreach($program_list as $sort => $program) {
 		$list_index++;
