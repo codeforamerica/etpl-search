@@ -1,6 +1,6 @@
 # Find the Best Training
 
-## Mobile-optimized site to help job seekers find high-quality training that is eligible for publicly-funded tuition assistance.
+### Mobile-optimized site to help job seekers find high-quality training that is eligible for publicly-funded tuition assistance.
 
 This project is an experiment to increase usability and data presentation of the [New Jersey ETPL](http://www.njtrainingsystems.org/) in order to support job seekers in choosing a training program.
 

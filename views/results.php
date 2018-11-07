@@ -92,9 +92,9 @@
 		
 		<a href="program.php?id=<?php echo $program["program_id"];?>" class="program-link-wrapper">
 			<div class="program" id="<?php echo $sort; ?>">
-				<h1><?php if($config["show-ratings"] == 1) { ?><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php } ?><?php echo $program["program_name"];?></h1>
+				<h1><?php if($config["show-ratings"] == "true") { ?><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php } ?><?php echo $program["program_name"];?></h1>
 				<h2><?php echo $program["provider_name"];?></h2>
-				<?php if($config["show-data"] == 1) { ?>
+				<?php if($config["show-data"] == "true") { ?>
 				<div class="data">
 					<?php include("shared/program-data.php"); ?>
 				</div>
