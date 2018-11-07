@@ -105,6 +105,7 @@ function set_cookie(name, value, days) {
 }
 
 function set_scroll_container_width(item, container) {
+	/*
 	setTimeout(function() {
 		var container_width = 0;
 
@@ -116,6 +117,7 @@ function set_scroll_container_width(item, container) {
 		container_width = container_width + (parseInt($(container).css("padding-left")));
 		$(container).width(container_width);
 	}, 10);
+	*/
 }
 
 $(document).ready(function() {
