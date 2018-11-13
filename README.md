@@ -4,7 +4,7 @@
 
 This project is an experiment to increase usability and data presentation of the [New Jersey ETPL](http://www.njtrainingsystems.org/) in order to support job seekers in choosing a training program.
 
-http://findtraining.org
+⚡️ [View Live Site](https://findtraining.org)
 
 ![screenshot](https://github.com/codeforamerica/etpl-search/blob/master/readme/screenshot-compressed.png)
 
