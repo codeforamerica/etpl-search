@@ -13,7 +13,6 @@
 	
 		foreach($json as $all_data => $program_data) {
 			saveToDatabase($program_data);
-			
 			// print_r($program_data);
 		}
 	}
@@ -22,7 +21,7 @@
 		global $db;
 	 	if(!$db) { die("Connection failed: " . mysqli_connect_error()); }
 		
-		$query = "INSERT INTO programs (
+		$query = "INSERT IGNORE INTO programs (
 			state,
 			program_id,
 			program_name,
@@ -134,7 +133,7 @@
 			outcomes_data_2_years_related_programs_wage_yearly_num
 		) VALUES (
 			'CO',
-			'".$data["id"]."',
+			'CO-".$data["id"]."',
 			'".mysqli_real_escape_string($db, $data["programName"])."',
 			'".mysqli_real_escape_string($db, $data["providerName"])."',
 			'".mysqli_real_escape_string($db, $data["cipCodeTitle"])."',
@@ -247,7 +246,7 @@
 		// echo $query;
 
 		if(mysqli_query($db, $query)) {
-			echo $data["program_id"]." added to database";
+			echo $data["id"]." added to database<br>";
 		} else {
 			echo "Error: ".$query."<br>" . mysqli_error($db);
 		}

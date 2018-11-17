@@ -14,9 +14,8 @@
 			foreach($careerPathway["occupations"] as $occupations => $occupation) {
 				
 				foreach($occupation["programsOfStudy"] as $programsOfStudy => $programOfStudy) {
-					print_r($programOfStudy["cipCode"]);
-					echo "<br>";
-					
+					// print_r($programOfStudy["cipCode"]);
+					// echo "<br>";
 					getProviderPrograms($programOfStudy["cipCode"]);
 				}
 				

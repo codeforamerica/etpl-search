@@ -71,7 +71,8 @@
 	if(mysqli_num_rows($programs) > 0) {
 		while($program = mysqli_fetch_assoc($programs)) {
 			$rating = generate_rating($program);
-			$sort = str_pad($rating["total"], 5, '0', STR_PAD_LEFT)."-".str_replace(" ", "_", $program["program_name"]).$program["program_id"];
+			if($rating["total"] != "nan") { $rating_sort = str_pad($rating["total"], 5, '0', STR_PAD_LEFT)."_"; }
+			$sort = $rating_sort.str_replace(" ", "_", $program["program_name"])."_".$program["program_id"];
 			$program_list[$sort] = $program;
 			$program_list[$sort]["rating"] = $rating;
 		}
@@ -101,7 +102,7 @@
 		<a href="program.php?id=<?php echo $program["program_id"];?>" class="program-link-wrapper">
 			<div class="program" id="<?php echo $sort; ?>">
 				<h1><?php if($config["show-ratings"] == "true" && $program["rating"]["total"] != "nan") { ?><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php } ?><?php echo $program["program_name"];?></h1>
-				<h2><?php echo $program["provider_name"];?></h2>
+				<h2><?php echo $program["provider_name"]; ?></h2>
 				<?php if($config["show-data"] == "true") { ?>
 				<div class="data">
 					<?php include("shared/program-data.php"); ?>
