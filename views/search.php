@@ -59,7 +59,8 @@
 	  <h2>Type a skill or job you want and see relevant training programs eligible for tuition assistance.</h2>
       <form method="GET" action="results-wrapper.php">
 		<?php if(isset($_GET["experimental_data"])) { ?>
-	        <input type="text" name="state" class="location" value="<?php echo ucwords($_GET["state"]); ?>" placeholder="Type a state...">
+	        <input type="text" name="state" class="location" value="<?php echo ucwords($_GET["state"]); ?>" placeholder="Type a state..." autocomplete="off">
+	        <input type="hidden" name="experimental_data">
 		<?php } else { ?>
 	        <input type="text" class="location" value="New Jersey" disabled>
 		<?php } ?>

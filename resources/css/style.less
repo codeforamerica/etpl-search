@@ -348,6 +348,7 @@ html, body {
 			
 			.header-wrapper {
 				width: 100%;
+				min-height: 64px;
 				padding: 0;
 				background: #FFFFFF;
 				box-shadow: 0 1px 0 0 #EAEAEA;
@@ -496,6 +497,10 @@ html, body {
 				margin-top: 129px;
 				width: 100%;
 				z-index: 1;
+				
+				&.no-filters {
+					margin-top: 129px - 44px;
+				}
 				
 				.no-results {
 					width: 100%;
