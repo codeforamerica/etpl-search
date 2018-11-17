@@ -6,4 +6,4 @@ https://www.cotrainingproviders.org/api/careerArea/getProgramOfStudy/01.0105/
 
 https://www.cotrainingproviders.org/api/provider/getProviderPrograms/01.0105/
 
-https://www.cotrainingproviders.org/api/provider/getProviderProgram/847/
+https://www.cotrainingproviders.org/api/provider/getProviderProgram/615/

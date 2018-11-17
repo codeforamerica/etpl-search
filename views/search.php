@@ -58,7 +58,11 @@
       <!--<h2>Compare training programs that are eligible for tuition assistance from the government.</h2>-->
 	  <h2>Type a skill or job you want and see relevant training programs eligible for tuition assistance.</h2>
       <form method="GET" action="results-wrapper.php">
-        <input type="text" class="location" value="New Jersey" disabled>
+		<?php if(isset($_GET["experimental_data"])) { ?>
+	        <input type="text" name="state" class="location" value="<?php echo ucwords($_GET["state"]); ?>" placeholder="Type a state...">
+		<?php } else { ?>
+	        <input type="text" class="location" value="New Jersey" disabled>
+		<?php } ?>
         <input type="search" class="search" placeholder="Type a skill or job..." name="query" autocomplete="off">
         <input type="submit" value="" class="circle">
 		<?php if($config["show-search-suggestions"] == "true") { ?>
@@ -75,10 +79,12 @@
 			</div>
 		</div>
 		<?php } ?>
+		<?php if(!isset($_GET["experimental_data"])) { ?>
         <h3>Filters</h2>
         <div id="checkboxes">
           <?php include("shared/filters.php"); ?>
         </div>
+		<?php } ?>
 
         <input type="submit" value="Search" class="fake">
       </form>

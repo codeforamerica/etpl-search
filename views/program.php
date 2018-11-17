@@ -62,8 +62,8 @@
 				<label>all results</label>
 			</a>
 			<div id="content">
-				<h1><?php if($config["show-ratings"] == "true") { ?><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php } ?><?php echo $program["program_name"];?></h1>
-				<h2><a target="_blank" href="<?php echo $program["provider_website"]; ?>"><?php echo $program["provider_name"]; ?></a></h2>
+				<h1><?php if($config["show-ratings"] == "true" && $program["rating"]["total"] != "nan") { ?><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php } ?><?php echo $program["program_name"];?></h1>
+				<h2><a target="_blank" href="<?php if(strpos($program["provider_website"], "http") === false) { echo "http://"; } echo $program["provider_website"]; ?>"><?php echo $program["provider_name"]; ?></a></h2>
 				<?php if($config["show-data"] == "true") { ?>
 				<div class="data">
 					<?php include("shared/program-data.php"); ?>
@@ -88,11 +88,26 @@
 						<p>
 							<b><?php echo $program["contact_name"]; ?></b>
 							<br>
-							<a class="contact" href="mailto:<?php echo $program["contact_email"]; ?>"><?php echo $program["contact_email"]; ?></a> &middot;
+							<?php if($program["contact_email"] != "") { ?>
+							<a class="contact" href="mailto:<?php echo $program["contact_email"]; ?>"><?php echo $program["contact_email"]; ?></a>
+							<?php } ?>
+							<?php if($program["contact_email"] != "" && $program["contact_phone_number"] != "") { echo " &middot; "; } ?> 
+							<?php if($program["contact_phone_number"] != "") { ?>
 							<a class="contact" href="tel:<?php echo $program["contact_phone_number"]; ?><?php if($program["contact_phone_number_ext"] != "") { echo ",".$program["contact_phone_number_ext"]; } ?>"><?php echo $program["contact_phone_number"]; if($program["contact_phone_number_ext"] != "") { echo " ext ".$program["contact_phone_number_ext"]; } ?></a>
+							<?php } ?>
 						</p>
 					</div>
+					<?php if($program["contact_email"] != "" && $program["contact_phone_number"] != "") { ?>
 					<a href="mailto:<?php echo $program["contact_email"]; ?>"><button class="half-width left">Email</button></a><a href="tel:<?php echo $program["contact_phone_number"]; ?><?php if($program["contact_phone_number_ext"] != "") { echo ",".$program["contact_phone_number_ext"]; } ?>"><button class="half-width right">Call</button></a>
+					<?php } else { ?>
+						<?php if($program["contact_email"] != "") { ?>
+							<a href="mailto:<?php echo $program["contact_email"]; ?>"><button class="full-width">Email</button></a>
+						<?php } ?>
+						<?php if($program["contact_phone_number"] != "") { ?>
+							<a href="tel:<?php echo $program["contact_phone_number"]; ?><?php if($program["contact_phone_number_ext"] != "") { echo ",".$program["contact_phone_number_ext"]; } ?>"><button class="full-width">Call</button></a>
+						<?php } ?>
+					<?php } ?>
+							
 				</section>
 								
 				<section>
@@ -113,15 +128,15 @@
 								<tr><td class="label">Length</td><td class="value"><?php echo $program["info_calendar_length"]; ?></td></tr>
 							<?php } ?>
 														
-							<?php if($program["credentials_credential"] != "0") { ?>
+							<?php if($program["credentials_credential"] != "0" && $program["credentials_credential"] != "") { ?>
 								<tr><td class="label">Credential</td><td class="value"><?php echo $program["credentials_credential"]; ?></td></tr>
 							<?php } ?>
 
-							<?php if($program["credentials_degree"] != "0") { ?>
+							<?php if($program["credentials_degree"] != "0" && $program["credentials_degree"] != "") { ?>
 								<tr><td class="label">Degree</td><td class="value"><?php echo $program["credentials_degree"]; ?></td></tr>
 							<?php } ?>
 
-							<?php if($program["credentials_license"] != "0") { ?>
+							<?php if($program["credentials_license"] != "0" && $program["credentials_license"] != "") { ?>
 								<tr><td class="label">License</td><td class="value"><?php echo $program["credentials_license"]; ?></td></tr>
 							<?php } ?>
 						</table>
@@ -146,6 +161,7 @@
 				
 				<?php if($research_prompt_position == 3) { include("../views/shared/research-prompt.php"); } ?>
 				
+				<?php if(count($features) != array_count_values($features)[0]) { ?>
 				<section>
 					<h3>Features</h3>
 					<div class="section-content">
@@ -156,6 +172,7 @@
 						<?php } ?>
 					</div>
 				</section>
+				<?php } ?>
 				
 				<?php if($research_prompt_position == 4) { include("../views/shared/research-prompt.php"); } ?>
 			</div>

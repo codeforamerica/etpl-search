@@ -1,7 +1,7 @@
 <?php 
 	$ch = curl_init();
 
-	$alphas = range('a', 'z');
+	$alphas = range('a', 'a');
 	
 	foreach($alphas as $alpha) {
 

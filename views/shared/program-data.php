@@ -1,4 +1,16 @@
 <?php
+	if($program["outcomes_data_6_months_this_program_employment_rate_value"] == "") {
+		$program["outcomes_data_6_months_this_program_employment_rate_value"] = "N/A";
+	}
+	
+	if($program["outcomes_data_6_months_this_program_wage_yearly_value"] == "") {
+		$program["outcomes_data_6_months_this_program_wage_yearly_value"] = "N/A";
+	}
+	
+	if($program["outcomes_data_2_years_this_program_wage_yearly_value"] == "") {
+		$program["outcomes_data_2_years_this_program_wage_yearly_value"] = "N/A";
+	}
+	
 	if($program["outcomes_data_6_months_this_program_employment_rate_value"] != "N/A") {
 		$employment_rate = int($program["outcomes_data_6_months_this_program_employment_rate_value"]);
 		if($employment_rate > 60) { $employment_rate_rating = "good"; }

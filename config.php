@@ -5,7 +5,7 @@
 		strpos($_SERVER["REMOTE_ADDR"], '192.168.1') !== false
 	) {
 		$config = Array(
-			"show-search-suggestions" => "false",
+			"show-search-suggestions" => "true",
 			"show-data" => "true",
 			"show-ratings" => "true",
 			"show-research-prompt" => "true"
