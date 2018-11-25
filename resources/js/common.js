@@ -131,24 +131,26 @@ $(document).ready(function() {
 
 	if(typeof(mixpanel) == "undefined"){
 		mixpanel = {
-			track: function(name, data){
-				console.log("Fired '"+name+"' event with", data)}
-			};
-			console.log("initialized fake mixpanel");
-		}
-		init_mixpanel_events();
+			track: function(name, data) {
+				console.log("Fired '"+name+"' event with", data)
+			}
+		};
+		console.log("initialized fake mixpanel");
+	}
+	
+	init_mixpanel_events();
 
-		$(".program.special .close").click(function(e) {
-			$(this).parent(".program.special").hide();
-			// if x is clicked, don't show prompt again for 3 days
-			set_cookie("research-prompt-closed", 1, 3);
-			e.preventDefault();
-			e.stopPropagation();
-		});
-
-		$("#research-prompt").click(function() {
-			$(this).hide();
-			// if link is clicked, don't show prompt again for 7 days
-			set_cookie("research-prompt-closed", 1, 7);
-		});
+	$(".program.special .close").click(function(e) {
+		$(this).parent(".program.special").hide();
+		// if x is clicked, don't show prompt again for 3 days
+		// set_cookie("research-prompt-closed", 1, 3);
+		e.preventDefault();
+		e.stopPropagation();
 	});
+
+	$("#research-prompt").click(function() {
+		// $(this).hide();
+		// if link is clicked, don't show prompt again for 7 days
+		// set_cookie("research-prompt-closed", 1, 7);
+	});
+});
