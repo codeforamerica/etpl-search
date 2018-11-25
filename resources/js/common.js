@@ -143,14 +143,14 @@ $(document).ready(function() {
 	$(".program.special .close").click(function(e) {
 		$(this).parent(".program.special").hide();
 		// if x is clicked, don't show prompt again for 3 days
-		// set_cookie("research-prompt-closed", 1, 3);
+		set_cookie("research-prompt-closed", 1, 3);
 		e.preventDefault();
 		e.stopPropagation();
 	});
 
 	$("#research-prompt").click(function() {
-		// $(this).hide();
+		$(this).hide();
 		// if link is clicked, don't show prompt again for 7 days
-		// set_cookie("research-prompt-closed", 1, 7);
+		set_cookie("research-prompt-closed", 1, 7);
 	});
 });
