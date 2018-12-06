@@ -1,13 +1,13 @@
 <?php if($config["show-research-prompt"] == "true") { ?>
 
 	<?php if(!isset($_COOKIE["research-prompt-closed"]) || isset($_GET["force_research_prompt"])) { ?>
-	  <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdZXAQdsNTtLYRGLd2VS5W-74i0tDeedgj19pRxWq9IiAha1w/viewform" class="program-link-wrapper" id="research-prompt" data-research-prompt-position="<?php echo $research_prompt_position; ?>">
+	  <a target="_blank" href="<?php echo (getenv("PRODUCTION") == "true" ? getenv("RESEARCH_PROMPT_LINK") : "about:blank"); ?>" class="program-link-wrapper" id="research-prompt" data-research-prompt-position="<?php echo $research_prompt_position; ?>">
 	    <div class="program special">
 	      <div class="close"></div>
-	      <h1>Paid Research Study</h1>
-	      <div class="description">Share your experience using this site and get a $25 Amazon gift card.</div>
-	      <div class="description small">Code for America is looking to understand how people find subsidized/paid training. If selected, we'll contact you to schedule a call.</div>
-	      <button class="full-width small">Sign Up</button>
+	      <h1><?php echo (getenv("PRODUCTION") == "true" ? getenv("RESEARCH_PROMPT_TITLE") : "RESEARCH_PROMPT_TITLE"); ?></h1>
+	      <div class="description"><?php echo (getenv("PRODUCTION") == "true" ? getenv("RESEARCH_PROMPT_SUBTITLE") : "RESEARCH_PROMPT_SUBTITLE"); ?></div>
+	      <div class="description small"><?php echo (getenv("PRODUCTION") == "true" ? getenv("RESEARCH_PROMPT_DESCRIPTION") : "RESEARCH_PROMPT_DESCRIPTION"); ?></div>
+	      <button class="full-width small"><?php echo (getenv("PRODUCTION") == "true" ? getenv("RESEARCH_PROMPT_BUTTON_TEXT") : "RESEARCH_PROMPT_BUTTON_TEXT"); ?></button>
 	    </div>
 	  </a>
 	<?php } ?>
