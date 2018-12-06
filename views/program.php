@@ -62,7 +62,7 @@
 				<label>all results</label>
 			</a>
 			<div id="content">
-				<h1><?php if($config["show-ratings"] == "true" && $program["rating"]["total"] != "nan") { ?><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php } ?><?php echo $program["program_name"];?></h1>
+				<h1><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;<?php if($config["show-ratings"] != "true" || $program["rating"]["total"] == "nan") { echo " display: none;"; } ?>"><?php echo $program["rating"]["total"]; ?></div><?php echo $program["program_name"];?></h1>
 				<h2><a target="_blank" href="<?php if(strpos($program["provider_website"], "http") === false) { echo "http://"; } echo $program["provider_website"]; ?>"><?php echo $program["provider_name"]; ?></a></h2>
 				<?php if($config["show-data"] == "true") { ?>
 				<div class="data">
