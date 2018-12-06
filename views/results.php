@@ -98,10 +98,9 @@
 				include("../views/shared/research-prompt.php");
 			}
 		?>
-		
 		<a href="program.php?id=<?php echo $program["program_id"];?>" class="program-link-wrapper">
 			<div class="program" id="<?php echo $sort; ?>">
-				<h1><?php if($config["show-ratings"] == "true" && $program["rating"]["total"] != "nan") { ?><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;"><?php echo $program["rating"]["total"]; ?></div><?php } ?><?php echo $program["program_name"];?></h1>
+				<h1><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;<?php if($config["show-ratings"] != "true" || $program["rating"]["total"] == "nan") { echo " display: none;"; } ?>"><?php echo $program["rating"]["total"]; ?></div><?php echo $program["program_name"];?></h1>
 				<h2><?php echo $program["provider_name"]; ?></h2>
 				<?php if($config["show-data"] == "true") { ?>
 				<div class="data">
