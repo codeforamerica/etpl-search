@@ -16,7 +16,7 @@
 	<div id="wrapper" class="results">
 		<div class="header-wrapper">
 			<form>
-					<a href="search.php<?php if(isset($_GET["experimental_data"])) { echo "?experimental_data&state=".$_GET["state"]; } ?>" class="back"></a>
+					<a href="search.php?<?php if(isset($_GET["experimental_data"])) { echo "&experimental_data&state=".$_GET["state"]; } if($_GET["config_override"] == 1) { echo "&config_override=1"; if($_GET["show_ratings"] == 1) { echo "&show_ratings=1"; } if($_GET["show_data"] == 1) { echo "&show_data=1"; } } ?>" class="back"></a>
 					<input type="search" class="search" placeholder="Type a skill..." name="query" autocomplete="off" value="<?php echo $_GET['query']; ?>">
 					<?php if(isset($_GET["experimental_data"])) { ?>
 					<input type="hidden" name="experimental_data">
