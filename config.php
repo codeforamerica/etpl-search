@@ -18,4 +18,13 @@
 			"show-research-prompt" => getenv("SHOW_RESEARCH_PROMPT")
 		);
 	}
+	
+	if($_GET["config_override"] == 1) {
+		if($_GET["show_ratings"] == 1) {
+			$config["show-ratings"] = "true";
+		}
+		if($_GET["show_data"] == 1) {
+			$config["show-data"] = "true";
+		}
+	}
 ?>

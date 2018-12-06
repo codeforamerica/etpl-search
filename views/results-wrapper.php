@@ -22,6 +22,11 @@
 					<input type="hidden" name="experimental_data">
 					<?php } ?>
 					<input type="hidden" name="state" value="<?php echo $_GET['state']; ?>">
+					<?php if($_GET["config_override"] == 1) { ?>
+						<input type="hidden" name="config_override" value="1">
+				        <?php if($_GET["show_ratings"] == 1) { ?><input type="hidden" name="show_ratings" value="1"><?php } ?>
+				        <?php if($_GET["show_data"] == 1) { ?><input type="hidden" name="show_data" value="1"><?php } ?>
+					<?php } ?>
 					<?php if(!isset($_GET["experimental_data"])) { ?>
 						<div id="checkboxes-wrapper">
 							<div id="checkboxes-scroll-wrapper">

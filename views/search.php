@@ -64,6 +64,11 @@
 		<?php } else { ?>
 	        <input type="text" class="location" value="New Jersey" disabled>
 		<?php } ?>
+		<?php if($_GET["config_override"] == 1) { ?>
+			<input type="hidden" name="config_override" value="1">
+	        <?php if($_GET["show_ratings"] == 1) { ?><input type="hidden" name="show_ratings" value="1"><?php } ?>
+	        <?php if($_GET["show_data"] == 1) { ?><input type="hidden" name="show_data" value="1"><?php } ?>
+		<?php } ?>
         <input type="search" class="search" placeholder="Type a skill or job..." name="query" autocomplete="off">
         <input type="submit" value="" class="circle">
 		<?php if($config["show-search-suggestions"] == "true") { ?>

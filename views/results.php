@@ -98,7 +98,11 @@
 				include("../views/shared/research-prompt.php");
 			}
 		?>
+		<?php if($_GET["config_override"] == 1) { ?>
+			<a href="program.php?id=<?php echo $program["program_id"];?>&config_override=1<?php if($_GET["show_ratings"] == 1) { echo "&show_ratings=1"; } if($_GET["show_data"] == 1) { echo "&show_data=1"; } ?>" class="program-link-wrapper">
+		<?php } else { ?>
 		<a href="program.php?id=<?php echo $program["program_id"];?>" class="program-link-wrapper">
+		<?php } ?>
 			<div class="program" id="<?php echo $sort; ?>">
 				<h1><div class="rating" style="background-color: <?php echo $program["rating"]["color"]; ?>;<?php if($config["show-ratings"] != "true" || $program["rating"]["total"] == "nan") { echo " display: none;"; } ?>"><?php echo $program["rating"]["total"]; ?></div><?php echo $program["program_name"];?></h1>
 				<h2><?php echo $program["provider_name"]; ?></h2>
