@@ -1,0 +1,119 @@
+
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+    <title>Find the Best Training</title>
+    <link rel="stylesheet/less" href="resources/css/style.less.html">
+    <script src="resources/js/lib/less.js"></script>
+    <script src="resources/js/lib/jquery.js"></script>
+    <script src="resources/js/common.js"></script>
+    <script src="resources/js/search.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body ontouchstart="" class="search">
+
+    <div id="wrapper" class="search">
+      <div id="people-wrapper">
+        <div id="people"></div>
+      </div>
+      <h1>Find the best training for your next job.</h1>
+      <!--<h2>Compare training programs that are eligible for tuition assistance from the government.</h2>-->
+	  <h2>Type a skill or job you want and see relevant training programs eligible for tuition assistance.</h2>
+      <form method="GET" action="https://findtraining.herokuapp.com/views/results-wrapper.php">
+			        <input type="text" class="location" value="New Jersey" disabled>
+				        <input type="search" class="search" placeholder="Type a skill or job..." name="query" autocomplete="off">
+        <input type="submit" value="" class="circle">
+				<div id="suggestions-wrapper">
+			<div id="suggestions-scroll-wrapper">
+				<div id="suggestions-container">
+											<div id="Computer" data-search-terms="computer/software/data/it/technology" class="suggestion-wrapper">
+							<div class="icon" style="background-position-y: -192px;"></div>
+							<label>Computer</label>
+						</div>
+											<div id="Health Care" data-search-terms="medical/health/healthcare/nursing/nurse/dental" class="suggestion-wrapper">
+							<div class="icon" style="background-position-y: -32px;"></div>
+							<label>Health Care</label>
+						</div>
+											<div id="Sales" data-search-terms="sales/marketing" class="suggestion-wrapper">
+							<div class="icon" style="background-position-y: -64px;"></div>
+							<label>Sales</label>
+						</div>
+											<div id="Business" data-search-terms="business/management/international/entrepreneurship" class="suggestion-wrapper">
+							<div class="icon" style="background-position-y: -160px;"></div>
+							<label>Business</label>
+						</div>
+											<div id="Education" data-search-terms="education/teaching" class="suggestion-wrapper">
+							<div class="icon" style="background-position-y: -352px;"></div>
+							<label>Education</label>
+						</div>
+											<div id="Science/Math" data-search-terms="science/math" class="suggestion-wrapper">
+							<div class="icon" style="background-position-y: -256px;"></div>
+							<label>Science/Math</label>
+						</div>
+									</div>
+			</div>
+		</div>
+				        <h3>Filters</h2>
+        <div id="checkboxes">
+          
+      <div class="checkbox-wrapper">
+        <input type="checkbox" name="attributes_in_demand"><div class="checkbox"></div><label for="attributes_in_demand">In-demand</label>
+      </div>
+      <div class="checkbox-wrapper">
+        <input type="checkbox" name="features_child_care_offered_on_site"><div class="checkbox"></div><label for="features_child_care_offered_on_site">On-Site Childcare Available</label>
+      </div>
+      <div class="checkbox-wrapper">
+        <input type="checkbox" name="features_distance_learning_services_provider"><div class="checkbox"></div><label for="features_distance_learning_services_provider">Distance Learning Available</label>
+      </div>
+      <div class="checkbox-wrapper">
+        <input type="checkbox" name="features_spanish_spoken_by_staff"><div class="checkbox"></div><label for="features_spanish_spoken_by_staff">Spanish-Speaking Staff</label>
+      </div>
+      <div class="checkbox-wrapper">
+        <input type="checkbox" name="features_other_languages_spoken_by_staff"><div class="checkbox"></div><label for="features_other_languages_spoken_by_staff">Other Languages Spoken By Staff</label>
+      </div>
+      <div class="checkbox-wrapper">
+        <input type="checkbox" name="features_wia_eligible"><div class="checkbox"></div><label for="features_wia_eligible">WIA Eligible</label>
+      </div>
+      <div class="checkbox-wrapper">
+        <input type="checkbox" name="features_wheelchair_accessible"><div class="checkbox"></div><label for="features_wheelchair_accessible">Wheelchair Accessible</label>
+      </div>
+      <div class="checkbox-wrapper">
+        <input type="checkbox" name="features_career_counseling_available"><div class="checkbox"></div><label for="features_career_counseling_available">Career Counseling Available</label>
+      </div>
+        </div>
+		
+        <input type="submit" value="Search" class="fake">
+      </form>
+    </div>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128357156-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128357156-1');
+</script><!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init("53a8cb0b5026443c66c19a48ce185636");</script><!-- end Mixpanel -->
+<script>
+window['_fs_debug'] = false;
+window['_fs_host'] = 'fullstory.com';
+window['_fs_org'] = 'G1QAR';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+    g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
+    o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+    g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
+    g.consent=function(a){g("consent",!arguments.length||a)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(){};
+})(window,document,window['_fs_namespace'],'script','user');
+</script>  </body>
+</html>
