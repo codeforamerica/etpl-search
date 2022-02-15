@@ -20,7 +20,7 @@
       <h1>Find the best training for your next job.</h1>
       <!--<h2>Compare training programs that are eligible for tuition assistance from the government.</h2>-->
 	  <h2>Type a skill or job you want and see relevant training programs eligible for tuition assistance.</h2>
-      <form method="GET" action="https://findtraining.herokuapp.com/views/results-wrapper.php">
+      <form method="GET" action="views/results-wrapper.php">
 			        <input type="text" class="location" value="New Jersey" disabled>
 				        <input type="search" class="search" placeholder="Type a skill or job..." name="query" autocomplete="off">
         <input type="submit" value="" class="circle">
@@ -56,7 +56,7 @@
 		</div>
 				        <h3>Filters</h2>
         <div id="checkboxes">
-          
+
       <div class="checkbox-wrapper">
         <input type="checkbox" name="attributes_in_demand"><div class="checkbox"></div><label for="attributes_in_demand">In-demand</label>
       </div>
@@ -82,7 +82,7 @@
         <input type="checkbox" name="features_career_counseling_available"><div class="checkbox"></div><label for="features_career_counseling_available">Career Counseling Available</label>
       </div>
         </div>
-		
+
         <input type="submit" value="Search" class="fake">
       </form>
     </div>
